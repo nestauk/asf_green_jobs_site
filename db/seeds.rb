@@ -10,9 +10,19 @@ return unless Rails.env.development?
 
 ratings = ["very green", "green", "neutral", "not green"]
 
+Segment.destroy_all
+Industry.destroy_all
 Occupation.destroy_all
 
-Occupation.create!(
+ind1 = Industry.create!(name: "Other human resources provision")
+ind2 = Industry.create!(name: "Water collection, treatment and supply")
+ind3 = Industry.create!(name: "Management consultancy activities (other than financial management)")
+ind4 = Industry.create!(name: "Landscape service activities")
+ind5 = Industry.create!(name: "Other software publishing")
+ind6 = Industry.create!(name: "Other professional, scientific and technical activities (not including environmental consultancy or quantity surveying) nec")
+ind7 = Industry.create!(name: "Other financial service activities, except insurance and pension funding, (not including security dealing on own account and factoring) nec")
+
+occ1 = Occupation.create!(
   name: "Ecologists",
   green_timeshare: 57.1,
   green_topics_count: 46,
@@ -34,10 +44,10 @@ Occupation.create!(
   green_overall_rating: ratings.sample,
   green_occupation_rating: "#{ratings.sample} occupation",
   green_skills_rating: "#{ratings.sample} skills",
-  green_industry_rating: "#{ratings.sample} industry"
-)
+  green_industry_rating: "#{ratings.sample} industry",
+  industries: [ind1, ind2, ind4, ind3, ind5])
 
-Occupation.create!(
+occ2 = Occupation.create!(
   name: "Architects",
   green_timeshare: 23.4,
   green_topics_count: 10,
@@ -59,10 +69,11 @@ Occupation.create!(
   green_overall_rating: ratings.sample,
   green_occupation_rating: "#{ratings.sample} occupation",
   green_skills_rating: "#{ratings.sample} skills",
-  green_industry_rating: "#{ratings.sample} industry"
+  green_industry_rating: "#{ratings.sample} industry",
+  industries: [ind1, ind3, ind6, ind7]
 )
 
-Occupation.create!(
+occ3 = Occupation.create!(
   name: "Lifeguards",
   green_timeshare: 0,
   green_topics_count: 1,

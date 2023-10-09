@@ -9,8 +9,8 @@
 
   <select name="" id="">
     <option value=""></option>
-    <option value="">Occupation 1</option>
-    <option value="">Occupation 2</option>
-    <option value="">Occupation 3</option>
+    <%- Occupation.order(:name).each do |o| %>
+      <option value=<%= o.id %>><%= o.name %></option>
+    <% end %>
   </select>
 </section>

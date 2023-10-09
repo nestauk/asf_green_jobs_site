@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_09_134810) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+    t.string "sic_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "occupations", force: :cascade do |t|
     t.string "name"
@@ -29,4 +36,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_134810) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "segments", force: :cascade do |t|
+    t.bigint "industry_id", null: false
+    t.bigint "occupation_id", null: false
+    t.integer "count"
+    t.decimal "percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["industry_id"], name: "index_segments_on_industry_id"
+    t.index ["occupation_id"], name: "index_segments_on_occupation_id"
+  end
+
+  add_foreign_key "segments", "industries"
+  add_foreign_key "segments", "occupations"
 end

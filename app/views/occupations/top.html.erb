@@ -9,11 +9,11 @@
 
   <h2 class="text-lg font-bold my-5">Top green jobs by industry</h2>
 
-  <select name="" id="">
+  <select name="" id="" class="max-w-prose">
     <option value=""></option>
-    <option value="">Industry 1</option>
-    <option value="">Industry 2</option>
-    <option value="">Industry 3</option>
+    <%- Industry.all.each do |i| %>
+      <option value=<%= i.id %>><%= i.name %></option>
+    <% end %>
   </select>
 
   <ul>
