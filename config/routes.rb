@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "occupations#home"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/top-green-jobs", to: "occupations#top", as: "top"
+
+  get "/occupations/:id", to: "occupations#show", as: "occupation"
 end

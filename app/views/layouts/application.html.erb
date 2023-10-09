@@ -9,11 +9,25 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="flex flex-col h-screen px-4">
+    <header class="container mx-auto my-3">
+      <nav>
+        <%= link_to 'Home', root_path %>
+      </nav>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </header>
+
+    <main class="container mx-auto flex-1">
       <%= yield %>
     </main>
+
+    <footer class="container mx-auto my-3">
+      About
+    </footer>
   </body>
 </html>
