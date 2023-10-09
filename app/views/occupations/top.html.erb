@@ -9,10 +9,14 @@
 
   <h2 class="text-lg font-bold my-5">Top green jobs by industry</h2>
 
-  <select name="" id="" class="max-w-prose">
+  <select data-controller="choices" data-action="choices#industry">
     <option value=""></option>
     <%- Industry.all.each do |i| %>
-      <option value=<%= i.id %>><%= i.name %></option>
+      <% if i.id.to_s == params[:industry] %>
+        <option value=<%= i.id %> selected><%= i.name %></option>
+      <% else %>
+        <option value=<%= i.id %>><%= i.name %></option>
+      <% end %>
     <% end %>
   </select>
 

@@ -7,7 +7,7 @@
 
   <p class="my-5">Or, explore a green occupation...</p>
 
-  <select name="" id="">
+  <select data-controller="choices" data-action="choices#occupation">
     <option value=""></option>
     <%- Occupation.order(:name).each do |o| %>
       <option value=<%= o.id %>><%= o.name %></option>
