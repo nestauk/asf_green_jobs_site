@@ -2,6 +2,9 @@ class CreateOccupations < ActiveRecord::Migration[7.0]
   def change
     create_table :occupations do |t|
       t.string :name
+      t.integer :num_job_ads
+      t.decimal :avg_num_skills
+      t.decimal :prop_green_skills
       t.decimal :green_timeshare
       t.integer :green_topics_count
       t.jsonb :green_topics_list

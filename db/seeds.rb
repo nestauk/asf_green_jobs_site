@@ -24,6 +24,9 @@ ind7 = Industry.create!(name: "Other financial service activities, except insura
 
 occ1 = Occupation.create!(
   name: "Ecologists",
+  num_job_ads: 39,
+  avg_num_skills: 19.20512821,
+  prop_green_skills: 0.2394704686,
   green_timeshare: 57.1,
   green_topics_count: 46,
   green_topics_list: ['Wildlife', 'Energy engineering', 'Green research', 'Green policy', 'Biodiversity', 'Energy efficiency', 'Earth science', 'Environmental impact', 'Eco-tourism', 'Biodegradable', 'Conservation', 'Green communities', 'Pollution prevention', 'Energy', 'Forestry', 'Environmental science', 'Renewable energy', 'Biomass', 'Renewable', 'Atmospheric science', 'Aquaculture', 'Clean energy', 'Green legal issues', 'Weatherization', 'Sustainability', 'Land use planning', 'Eco-hacking', 'Climatology', 'Environmental remediation', 'Water resources', 'Green economy', 'Ecology', 'Environmental protection', 'Green recreation', 'Leadership in energy and environmental design (LEED)', 'Green advocacy', 'Green socioeconomic development', 'Agriculture', 'Green solutions', 'Energy trading', 'Environment', 'Naturalist', 'Sustainable communities', 'Green education', 'Natural pesticides', 'Green construction'],
@@ -37,6 +40,9 @@ occ1 = Occupation.create!(
 
 occ2 = Occupation.create!(
   name: "Architects",
+  num_job_ads: 56,
+  avg_num_skills: 13.94642857,
+  prop_green_skills: 0.02660133655,
   green_timeshare: 23.4,
   green_topics_count: 10,
   green_topics_list: ['Landscape architecture', 'Green solutions', 'Green economy', 'Sustainable communities', 'Green recreation', 'Leadership in energy and environmental design (LEED)', 'Land use planning', 'Sustainability', 'Green communities', 'Green construction'],
@@ -51,6 +57,9 @@ occ2 = Occupation.create!(
 
 occ3 = Occupation.create!(
   name: "UI and UX designers and researchers",
+  num_job_ads: 38,
+  avg_num_skills: 18.65789474,
+  prop_green_skills: 0.0213461951,
   green_timeshare: 0,
   green_topics_count: 1,
   green_topics_list: ['Infrastructure'],

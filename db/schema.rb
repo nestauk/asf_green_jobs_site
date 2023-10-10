@@ -23,6 +23,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
 
   create_table "occupations", force: :cascade do |t|
     t.string "name"
+    t.integer "num_job_ads"
+    t.decimal "avg_num_skills"
+    t.decimal "prop_green_skills"
     t.decimal "green_timeshare"
     t.integer "green_topics_count"
     t.jsonb "green_topics_list"
