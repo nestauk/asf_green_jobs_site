@@ -1,13 +1,17 @@
-<section class="max-w-prose mx-auto">
-  <h1 class="text-2xl font-bold">
-    Top green jobs
-  </h1>
 
-  <p class="text-lg my-5">Blurb about...</p>
+<section class="bg-slate-800">
+  <div class="max-w-screen-lg mx-auto p-4">
+    <h1 class="text-5xl text-white font-bold my-8">
+      Top green jobs
+    </h1>
+    <p class="text-xl text-stone-300 leading-relaxed mb-5 w-full md:w-2/3">
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
+    </p>
+  </div>
+</section>
 
-  <img src="https://placehold.co/650x350/e5e7eb/31343C?text=Chart" alt="placeholder">
-
-  <h2 class="text-lg font-bold my-5">Top green jobs by industry</h2>
+<section class="max-w-screen-lg mx-auto p-4">
+  <%# <img src="https://placehold.co/650x350/e5e7eb/31343C?text=Chart" alt="placeholder"> %>
 
   <select data-controller="choices" data-action="choices#industry">
     <option value=""></option>
@@ -20,12 +24,43 @@
     <% end %>
   </select>
 
-  <ul>
-    <%- @occupations.each do |o| %>
-      <li class="p-2 bg-gray-200 my-2">
-        <%= link_to o.name, o %> |
-        <%= o.green_timeshare %>% time on green tasks
-      </li>
-    <% end %>
-  </ul>
+  <%- @occupations.each do |o| %>
+    <div class="mb-6">
+      <div class="bg-stone-300 p-4">
+
+        <p class="mb-2">
+          <small class="text-stone-600 text-sm bg-emerald-700 text-white px-2 py-1 rounded">
+            <%= o.green_overall_rating %> greeness
+          </small>
+        </p>
+
+        <h2 class="text-blue-700 text-xl font-bold mb-2"><%= link_to o.name, o %></h2>
+
+        <p class="mb-4"><strong><%= o.green_timeshare %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong>19.2</strong> skills asked for, of which <strong>24%</strong> are green skills.</p>
+
+        <p class="mb-1 text-sm tracking-widest font-medium uppercase text-stone-600">Green measures</p>
+
+        <div class="flex flex-wrap text-sm font-semibold">
+          <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+            Occupation:
+            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+          </div>
+          <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+            Skills:
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+          </div>
+          <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+            Industry:
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </section>
