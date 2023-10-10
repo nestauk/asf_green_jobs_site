@@ -1,11 +1,18 @@
-<section class="max-w-prose mx-auto my-6">
-  <h1 class="text-3xl font-bold">Learn about green jobs and skills</h1>
+<section class="bg-img h-96 flex items-center">
+  <div class="max-w-screen-lg mx-auto p-4">
+    <h1 class="text-5xl text-white font-bold w-full md:w-2/3 mb-8">
+      Learn about green jobs and skills
+    </h1>
+    <p class="text-xl text-stone-200 leading-relaxed mb-5 w-full md:w-2/3 mb-8">
+      Developing a way to measure and identify green jobs to help grow the sector.
+    </p>
 
-  <p class="my-5">
-    <%= link_to 'Top green jobs', top_path %>
-  </p>
+    <%= link_to 'Explore top green jobs', top_path, class: 'inline-block mb-4 bg-blue-700 hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' %>
+  </div>
+</section>
 
-  <p class="my-5">Or, explore a green occupation...</p>
+<section class="max-w-prose mx-auto my-8">
+  <p class="my-5">Or, jump to an occupation...</p>
 
   <select data-controller="choices" data-action="choices#occupation">
     <option value=""></option>
@@ -13,4 +20,9 @@
       <option value=<%= o.id %>><%= o.name %></option>
     <% end %>
   </select>
+
+  <h2 class="text-xl font-bold mb-2">About this tool</h2>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis ea quisquam sunt aut illum aliquam commodi natus, tempora animi illo voluptates inventore voluptatibus ducimus repellat error eveniet harum suscipit enim!
+  </p>
 </section>

@@ -16,10 +16,18 @@
   </head>
 
   <body class="flex flex-col h-screen">
-    <header class="container max-w-screen-lg mx-auto p-4">
-      <nav>
-        <%= link_to 'Green Jobs Explorer', root_path %>
+    <header class="container max-w-screen-lg mx-auto px-4 pt-4 pb-2">
+      <nav class="flex items-end gap-3">
+        <strong><%= link_to 'Green Jobs Explorer', root_path, class: "text-lg" %></strong>
+        &middot;
+        <%= link_to 'Top green jobs', top_path %>
+        &middot;
+        <%= link_to 'About', '#todo' %>
       </nav>
+
+      <div class="mt-4 pt-2 border-t border-stone-300 text-sm">
+        This is a new service - <%= link_to 'provide feedback', 'mailto:info@nesta.org.uk' %> to help us improve it.
+      </div>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
