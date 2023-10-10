@@ -1,14 +1,92 @@
-<section class="max-w-prose mx-auto">
-  <h1 class="text-2xl font-bold my-5">
-    <%= @occupation.name %>
-  </h1>
+<section class="bg-slate-800">
+  <div class="max-w-screen-lg mx-auto p-4">
+    <p class="text-stone-400 mt-8 mb-3">
+      Occupation
+      &middot;
+      <small class="text-stone-600 text-xs px-2 py-1 rounded<%= greeness_bg(@occupation.green_overall_rating) %>">
+        <%= @occupation.green_overall_rating %> greeness
+      </small>
+    </p>
 
-  <p>Industries:</p>
+    <h1 class="text-5xl text-white font-bold mb-6">
+      <%= @occupation.name %>
+    </h1>
+    <p class="text-xl text-stone-300 leading-relaxed mb-5 w-full md:w-2/3">
+      This analysis has been generated from <%= @occupation.num_job_ads %> job adverts.
+    </p>
+  </div>
+</section>
+
+<section class="max-w-prose mx-auto">
+  <p class="my-8 text-lg">This occupation spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills.</p>
+
+  <h2 class="mt-6 mb-2 font-bold text-xl">Green measures</h2>
+
+  <div class="mb-3">
+    <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+      Occupation:
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_occupation_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_occupation_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+    </div>
+    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_occupation_rating%></p>
+  </div>
+
+  <div class="mb-3">
+    <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+      Skills:
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+    </div>
+    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_industry_rating%></p>
+  </div>
+
+  <div class="mb-3">
+    <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
+      Industry:
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+    </div>
+    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_skills_rating%></p>
+  </div>
+
+  <h2 class="mt-6 mb-2 font-bold text-xl">Top green skills for this occupation</h2>
+  <%- @occupation.top_green_skills.each do |s| %>
+    <div class="px-3 p-2 my-2 bg-stone-200">
+      <p><%= s["skill_name"].capitalize %></p>
+      <small class="text-stone-700">
+        Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
+      </small>
+    </div>
+  <% end %>
+
+  <h2 class="mt-6 mb-2 font-bold text-xl">Top non-green skills for this occupation</h2>
+  <%- @occupation.top_not_green_skills.each do |s| %>
+    <div class="px-3 p-2 my-2 bg-stone-200">
+      <p><%= s["skill_name"].capitalize %></p>
+      <small class="text-stone-700">
+        Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
+      </small>
+    </div>
+  <% end %>
+
+  <p class="mt-8">Industries:</p>
   <ul class="list-disc ml-5 mb-5">
     <%- @occupation.industries.each do |i| %>
       <li><%= i.name %></li>
     <% end %>
   </ul>
 
-  <img src="https://placehold.co/650x350/e5e7eb/31343C?text=Industry+percentage+chart" alt="placeholder">
+  <img class="mb-6" src="https://placehold.co/650x350/e5e7eb/31343C?text=Industry+percentage+chart" alt="placeholder">
+
+  <div class="my-8 p-4 bg-slate-100">
+    <h3 class="text-lg font-bold mb-2">
+      About this analysis
+    </h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum velit temporibus eveniet itaque error a rem debitis voluptatibus soluta aspernatur neque labore, sit harum tenetur voluptas similique impedit eligendi doloremque.
+    </p>
+  </div>
 </section>

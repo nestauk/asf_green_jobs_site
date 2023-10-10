@@ -36,7 +36,7 @@
 
         <h2 class="text-blue-700 text-xl font-bold mb-2"><%= link_to o.name, o %></h2>
 
-        <p class="mb-4"><strong><%= o.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= o.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= o.prop_green_skills.round(2) %>%</strong> are green skills.</p>
+        <p class="mb-4"><strong><%= o.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= o.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (o.prop_green_skills * 100).round(1) %>%</strong> are green skills.</p>
 
         <p class="mb-1 text-sm tracking-widest font-medium uppercase text-stone-600">Green measures</p>
 
