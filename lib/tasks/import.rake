@@ -23,6 +23,14 @@ namespace :import do
 
       occ.save!
 
+      JSON.parse(row["top_5_sics"]).each do |i|
+        ind = Industry.find_or_create_by!(name: i["sic_name"], sic_code: i["sic_id"])
+
+        seg = Segment.find_or_initialize_by(occupation: occ, industry: ind)
+        seg.count = i["num_job_ads"]
+        seg.percentage = i["prop_job_ads"]
+        seg.save!
+      end
     end
   end
 end
