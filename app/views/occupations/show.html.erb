@@ -53,23 +53,31 @@
   </div>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Top green skills for this occupation</h2>
-  <%- @occupation.top_green_skills.each do |s| %>
-    <div class="px-3 p-2 my-2 bg-stone-200">
-      <p><%= s["skill_name"].capitalize %></p>
-      <small class="text-stone-700">
-        Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
-      </small>
-    </div>
+  <% if @occupation.top_green_skills.any? %>
+    <%- @occupation.top_green_skills.each do |s| %>
+      <div class="px-3 p-2 my-2 bg-stone-200">
+        <p><%= s["skill_name"].capitalize %></p>
+        <small class="text-stone-700">
+          Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
+        </small>
+      </div>
+    <% end %>
+  <% else %>
+    <p>None</p>
   <% end %>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Top non-green skills for this occupation</h2>
-  <%- @occupation.top_not_green_skills.each do |s| %>
-    <div class="px-3 p-2 my-2 bg-stone-200">
-      <p><%= s["skill_name"].capitalize %></p>
-      <small class="text-stone-700">
-        Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
-      </small>
-    </div>
+  <% if @occupation.top_not_green_skills.any? %>
+    <%- @occupation.top_not_green_skills.each do |s| %>
+      <div class="px-3 p-2 my-2 bg-stone-200">
+        <p><%= s["skill_name"].capitalize %></p>
+        <small class="text-stone-700">
+          Found in <%= s["num_job_ads"] %> job ads (<%= (s["prop_job_ads"] * 100).round(1) %>%)
+        </small>
+      </div>
+    <% end %>
+  <% else %>
+    <p>None</p>
   <% end %>
 
   <p class="mt-8">Industries:</p>

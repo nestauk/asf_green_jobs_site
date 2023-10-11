@@ -28,9 +28,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
     t.decimal "prop_green_skills"
     t.decimal "green_timeshare"
     t.integer "green_topics_count"
-    t.jsonb "green_topics_list"
-    t.jsonb "top_green_skills"
-    t.jsonb "top_not_green_skills"
+    t.jsonb "green_topics_list", default: []
+    t.jsonb "top_green_skills", default: []
+    t.jsonb "top_not_green_skills", default: []
     t.string "green_overall_rating"
     t.string "green_occupation_rating"
     t.string "green_skills_rating"
