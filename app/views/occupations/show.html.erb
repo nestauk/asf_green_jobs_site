@@ -113,14 +113,16 @@
     <%= render 'card', o: o %>
   <% end %>
 
-  <p class="mt-8">Industries:</p>
-  <ul class="list-disc ml-5 mb-5">
-    <%- @occupation.industries.each do |i| %>
-      <li><%= i.name %></li>
-    <% end %>
-  </ul>
-
-  <img class="mb-6" src="https://placehold.co/650x350/e5e7eb/31343C?text=Industry+percentage+chart" alt="placeholder">
+  <h2 class="mt-6 mb-2 font-bold text-xl">Industries</h2>
+  <p class="mb-2">The top 5 industries which job ads for this occupation are found in.</p>
+  <%- @occupation.segments.each do |s| %>
+    <div class="px-3 p-2 my-2 bg-stone-200">
+      <p><%= link_to s.industry.name, occupations_path('q[industries_id_in][]' => s.industry_id) %></p>
+      <small class="text-stone-700">
+        Found in <%= s.count %> job ads (<%= (s.percentage * 100).round(1) %>%)
+      </small>
+    </div>
+  <% end %>
 
   <div class="my-8 p-4 bg-slate-200">
     <h3 class="text-lg font-bold mb-2">
