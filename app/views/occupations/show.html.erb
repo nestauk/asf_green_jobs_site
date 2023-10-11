@@ -29,27 +29,45 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_occupation_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_occupation_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
     </div>
-    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_occupation_rating%></p>
+    <p class="text-sm text-stone-700">
+      When the values for the % time spent on green tasks per occupation are split equally into thirds, this occupations' value sits in the
+      <strong>
+        <%= rating_to_sentence_word(@occupation.green_occupation_rating) %>
+      </strong>
+      third.
+    </p>
   </div>
 
   <div class="mb-3">
     <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
       Skills:
       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
     </div>
-    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_industry_rating%></p>
+    <p class="text-sm text-stone-700">
+      When the values for the average proportion of green skills per occupation are split equally into thirds, this occupations' value sits in the
+      <strong>
+        <%= rating_to_sentence_word(@occupation.green_skills_rating) %>
+      </strong>
+      third.
+    </p>
   </div>
 
   <div class="mb-3">
     <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
-      Industry:
+      Industries:
       <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="#000" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['mid', 'high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
     </div>
-    <p class="text-sm">Some blurb describing the rating: <%= @occupation.green_skills_rating%></p>
+    <p class="text-sm text-stone-700">
+      When the values for the average per unit GHG emissions for industries this occupation sit in are split equally into thirds, this occupations' value sits in the
+      <strong>
+        <%= rating_to_sentence_word(@occupation.green_industry_rating) %>
+      </strong>
+      third.
+    </p>
   </div>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Top green skills for this occupation</h2>
