@@ -100,6 +100,19 @@
     <p>None</p>
   <% end %>
 
+  <h2 class="mt-6 mb-2 font-bold text-xl">Similar occupations</h2>
+  <details class="text-sm mb-2 text-stone-700">
+    <summary><strong>About this feature</strong></summary>
+    Please note the following occupations are examples only and not necessarily similar ones. If you would find this feature useful then please
+    <%= link_to 'let us know', 'mailto:info@nesta.org.uk?subject=Feature Request - Green Jobs Tool' %>
+    .
+  </details>
+
+
+  <%- Occupation.all.sample(3).each do |o| %>
+    <%= render 'card', o: o %>
+  <% end %>
+
   <p class="mt-8">Industries:</p>
   <ul class="list-disc ml-5 mb-5">
     <%- @occupation.industries.each do |i| %>
