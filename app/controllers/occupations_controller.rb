@@ -3,12 +3,10 @@ class OccupationsController < ApplicationController
     @occupations = Occupation.all
   end
 
-  def top
-    if params[:industry]
-      @occupations = Occupation.joins(:industries).where('industries.id': params[:industry]).order(green_timeshare: :desc)
-    else
-      @occupations = Occupation.order(green_timeshare: :desc)
-    end
+  def index
+    @q = Occupation.ransack(params[:q])
+    @occupations = @q.result(distinct: true).order(green_timeshare: :desc)
+    # .page(params[:page])
   end
 
   def show

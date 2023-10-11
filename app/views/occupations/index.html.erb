@@ -13,16 +13,38 @@
 <section class="max-w-screen-lg mx-auto p-4">
   <%# <img src="https://placehold.co/650x350/e5e7eb/31343C?text=Chart" alt="placeholder"> %>
 
-  <select data-controller="choices" data-action="choices#industry">
-    <option value=""></option>
-    <%- Industry.all.each do |i| %>
-      <% if i.id.to_s == params[:industry] %>
-        <option value=<%= i.id %> selected><%= i.name %></option>
-      <% else %>
-        <option value=<%= i.id %>><%= i.name %></option>
-      <% end %>
-    <% end %>
-  </select>
+  <%= search_form_for @q do |f| %>
+    <div class="flex mt-2">
+      <div class="w-1/4">
+        <%= f.label :green_overall_rating_in, 'Overall greeness' %>
+        <%= f.collection_select :green_overall_rating_in, ["high", "mid-high", "low-mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+      <div class="w-1/4">
+        <%= f.label :green_occupation_rating_in, 'Occupation greeness' %>
+        <%= f.collection_select :green_occupation_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+      <div class="w-1/4">
+        <%= f.label :green_skills_rating_in, 'Skills greeness' %>
+        <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+      <div class="w-1/4 mb-2">
+        <%= f.label :green_industry_rating_in, 'Industry greeness' %>
+        <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+    </div>
+
+    <div class="mb-2">
+      <%= f.label :industries_id_in, 'Industries' %>
+      <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+    </div>
+
+    <%= f.button 'Filter', type: 'submit', class: "text-white bg-blue-800 py-1 px-2 mb-8" %>
+    <%= link_to 'Reset', occupations_path, class: 'ml-1 py-1 px-2 inline-block no-underline bg-blue-200' %>
+  <% end %>
 
   <%- @occupations.each do |o| %>
     <div class="mb-6">
