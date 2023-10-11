@@ -19,7 +19,7 @@
   </div>
 </section>
 
-<section class="max-w-prose mx-auto">
+<section class="max-w-prose mx-auto px-4">
   <p class="my-8 text-lg">This occupation spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills.</p>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Green measures</h2>
