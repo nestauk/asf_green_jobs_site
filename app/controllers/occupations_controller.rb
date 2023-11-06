@@ -7,10 +7,9 @@ class OccupationsController < ApplicationController
     @q = Occupation.ransack(params[:q])
     @occupations = @q.result(distinct: true)
                      .order(green_timeshare: :desc, prop_green_skills: :desc)
-                     .page(params[:page])
 
     respond_to do |format|
-      format.html
+      format.html { @occupations = @occupations.page(params[:page]) }
       format.json
       format.csv { send_data Occupation.to_csv(@occupations), filename: "green_jobs_data.csv"}
     end
