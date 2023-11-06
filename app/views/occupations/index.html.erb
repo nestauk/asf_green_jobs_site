@@ -47,8 +47,11 @@
 
   <div class="mb-6 flex justify-between">
     <p><%= page_entries_info @occupations %></p>
-    <p class="text-blue-700">
-      <%= link_to 'Download results (JSON)', occupations_path(q: request.query_parameters[:q], format: :json), download: "green_jobs_data.json" %>
+    <p class="text-sm">
+      <strong>Download results:</strong>
+      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: "green_jobs_data.json" %>
+      &middot;
+      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: 'csv') %>
     </p>
   </div>
 

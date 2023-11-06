@@ -1,3 +1,5 @@
+require 'csv'
+
 class Occupation < ApplicationRecord
   has_many :segments
   has_many :industries, through: :segments
@@ -13,5 +15,18 @@ class Occupation < ApplicationRecord
 
   def self.ransackable_associations(auth_object = nil)
     ["industries", "segments"]
+  end
+
+  def self.to_csv(iterable)
+    CSV.generate do |csv|
+      filtered_columns = column_names.excluding("id", "created_at", "updated_at", "top_green_skills", "top_not_green_skills")
+      csv << filtered_columns + ["top_green_skills", "top_not_green_skills", "industries"]
+      iterable.each do |occupation|
+        top_green_skills = occupation.top_green_skills.to_json
+        top_not_green_skills = occupation.top_not_green_skills.to_json
+        industries = occupation.industries.select(:name, :sic_code).to_json
+        csv << occupation.attributes.values_at(*filtered_columns) + [top_green_skills, top_not_green_skills, industries]
+      end
+    end
   end
 end

@@ -124,8 +124,11 @@
     </div>
   <% end %>
 
-  <p class="text-blue-700 my-8">
-    <%= link_to 'Download results (JSON)', occupation_path(@occupation, format: :json), download: "green_jobs_data.json" %>
+  <p class="my-8">
+    <strong>Download results:</strong>
+    <%= link_to 'JSON', occupation_path(@occupation, format: :json), download: "green_jobs_data.json" %>
+    &middot;
+    <%= link_to 'CSV', occupation_path(@occupation, format: :csv), download: "green_jobs_data.json" %>
   </p>
 
   <div class="my-8 p-4 bg-slate-200">
