@@ -45,8 +45,11 @@
     <%= link_to 'Reset', occupations_path, class: 'ml-1 py-1 px-2 inline-block no-underline bg-blue-200' %>
   <% end %>
 
-  <div class="mb-6">
-    <%= page_entries_info @occupations %>
+  <div class="mb-6 flex justify-between">
+    <p><%= page_entries_info @occupations %></p>
+    <p class="text-blue-700">
+      <%= link_to 'Download results (JSON)', occupations_path(q: request.query_parameters[:q], format: :json), target: "_blank" %>
+    </p>
   </div>
 
   <%- @occupations.each do |o| %>
