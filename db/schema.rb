@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_131211) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
     t.string "green_industry_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "median_min_annualised_salary"
+    t.integer "median_max_annualised_salary"
   end
 
   create_table "segments", force: :cascade do |t|

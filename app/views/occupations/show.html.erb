@@ -13,14 +13,14 @@
     <h1 class="text-5xl text-white font-bold mb-6">
       <%= @occupation.name %>
     </h1>
-    <p class="text-xl text-stone-300 leading-relaxed mb-5 w-full md:w-2/3">
-      This analysis has been generated from <%= @occupation.num_job_ads %> job adverts.
+    <p class="text-xl text-stone-300 leading-relaxed mb-5">
+      <%= @occupation.description %>
     </p>
   </div>
 </section>
 
 <section class="max-w-prose mx-auto px-4">
-  <p class="my-8 text-lg">This occupation spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills.</p>
+  <p class="my-8 text-lg">Based on analysing <strong><%= @occupation.num_job_ads %></strong> job ads this job spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(@occupation.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(@occupation.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Green measures</h2>
 

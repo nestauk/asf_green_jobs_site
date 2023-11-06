@@ -7,8 +7,9 @@ namespace :import do
 
     CSV.parse(URI.parse(args.url).open, headers: true) do |row|
 
-      occ = Occupation.find_or_initialize_by(name: row["SOC_2020_EXT_name"])
+      occ = Occupation.find_or_initialize_by(name: row["clean_soc_name"])
 
+      occ.description = row["soc_description"]
       occ.avg_num_skills = row["average_num_skills"]
       occ.green_industry_rating = row["ind_greenness"] || "unknown"
       occ.green_occupation_rating = row["occ_greenness"] || "unknown"
@@ -20,6 +21,8 @@ namespace :import do
       occ.prop_green_skills = row["average_prop_green_skills"]
       occ.top_green_skills = JSON.parse(row["top_5_green_skills"])
       occ.top_not_green_skills = JSON.parse(row["top_5_not_green_skills"])
+      occ.median_min_annualised_salary = row["median_min_annualised_salary"]
+      occ.median_max_annualised_salary = row["median_max_annualised_salary"]
 
       occ.save!
 
