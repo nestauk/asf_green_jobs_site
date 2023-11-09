@@ -3,6 +3,8 @@ require 'csv'
 class Occupation < ApplicationRecord
   has_many :segments
   has_many :industries, through: :segments
+  has_many :locations
+  has_many :regions, through: :locations
 
   validates :avg_num_skills, :green_industry_rating, :green_occupation_rating,
             :green_overall_rating, :green_skills_rating, :green_timeshare,
@@ -15,7 +17,7 @@ class Occupation < ApplicationRecord
   end
 
   def self.ransackable_associations(auth_object = nil)
-    ["industries", "segments"]
+    ["industries", "segments", "regions", "locations"]
   end
 
   def self.to_csv(iterable)
@@ -29,5 +31,9 @@ class Occupation < ApplicationRecord
         csv << occupation.attributes.values_at(*filtered_columns) + [top_green_skills, top_not_green_skills, industries]
       end
     end
+  end
+
+  def ordered_regions
+    regions.order('locations.percentage': 'DESC')
   end
 end

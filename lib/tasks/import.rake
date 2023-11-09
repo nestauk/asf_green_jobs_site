@@ -34,6 +34,14 @@ namespace :import do
         seg.percentage = i["prop_job_ads"]
         seg.save!
       end
+
+      JSON.parse(row["top_5_itl2_prop"])[0].each do |k, v|
+        region = Region.find_or_create_by!(name: k)
+
+        loc = Location.find_or_initialize_by(occupation: occ, region: region)
+        loc.percentage = v
+        loc.save!
+      end
     end
   end
 end

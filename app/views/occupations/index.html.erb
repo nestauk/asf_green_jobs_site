@@ -13,7 +13,7 @@
 
 <section class="max-w-screen-lg mx-auto p-4">
   <%= search_form_for @q do |f| %>
-    <div class="flex mt-2">
+    <div class="flex my-2">
       <div class="w-1/4">
         <%= f.label :green_overall_rating_in, 'Overall greeness' %>
         <%= f.collection_select :green_overall_rating_in, ["high", "mid-high", "low-mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
@@ -29,16 +29,22 @@
         <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
 
-      <div class="w-1/4 mb-2">
+      <div class="w-1/4">
         <%= f.label :green_industry_rating_in, 'Industry greeness' %>
         <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
-
     </div>
 
-    <div class="mb-2">
-      <%= f.label :industries_id_in, 'Industries' %>
-      <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+    <div class="flex my-2">
+      <div class="w-1/2">
+        <%= f.label :industries_id_in, 'Industries' %>
+        <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+      <div class="w-1/2">
+        <%= f.label :regions_id_in, 'Regions' %>
+        <%= f.collection_select :regions_id_in, Region.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
     </div>
 
     <%= f.button 'Filter', type: 'submit', class: "text-white bg-blue-800 py-1 px-2 mb-8" %>

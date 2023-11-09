@@ -20,7 +20,17 @@
 </section>
 
 <section class="max-w-prose mx-auto px-4">
-  <p class="my-8 text-lg">Based on analysing <strong><%= @occupation.num_job_ads %></strong> job ads this job spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(@occupation.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(@occupation.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
+  <p class="mt-8 mb-4 text-lg">Based on analysing <strong><%= @occupation.num_job_ads %></strong> job ads this job spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(@occupation.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(@occupation.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
+
+  <p class="mb-2"><strong>Top 5 regions</strong></p>
+  <ul class="list-disc mb-8">
+    <%- @occupation.ordered_regions.pluck(:id, :name, 'locations.percentage').each do |l| %>
+      <li class="ml-5 mb-1">
+        <%= link_to l[1], occupations_path('q[regions_id_in][]' => l[0]) %>
+        <small>(Found in <%= l[2].round(1) %>% of job ads)</small>
+      </li>
+    <% end %>
+  </ul>
 
   <h2 class="mt-6 mb-2 font-bold text-xl">Green measures</h2>
 
