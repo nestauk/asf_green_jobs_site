@@ -23,12 +23,13 @@ class Occupation < ApplicationRecord
   def self.to_csv(iterable)
     CSV.generate do |csv|
       filtered_columns = column_names.excluding("id", "created_at", "updated_at", "top_green_skills", "top_not_green_skills")
-      csv << filtered_columns + ["top_green_skills", "top_not_green_skills", "industries"]
+      csv << filtered_columns + ["top_green_skills", "top_not_green_skills", "industries", "regions"]
       iterable.each do |occupation|
         top_green_skills = occupation.top_green_skills.to_json
         top_not_green_skills = occupation.top_not_green_skills.to_json
-        industries = occupation.industries.select(:name, :sic_code).to_json
-        csv << occupation.attributes.values_at(*filtered_columns) + [top_green_skills, top_not_green_skills, industries]
+        industries = occupation.industries.select(:name, :sic_code, 'segments.count', 'segments.percentage').to_json
+        regions = occupation.regions.pluck(:name, 'locations.percentage').to_json
+        csv << occupation.attributes.values_at(*filtered_columns) + [top_green_skills, top_not_green_skills, industries, regions]
       end
     end
   end
