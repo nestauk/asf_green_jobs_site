@@ -53,7 +53,7 @@
 
   <div class="mb-6 flex flex-wrap justify-between">
     <p class="w-full md:w-1/2"><%= page_entries_info @occupations %></p>
-    <p class="w-full mt-3 md:mt-0 md:w-1/2 text-sm">
+    <p class="w-full mt-3 md:mt-0 md:w-1/2 text-sm md:text-right">
       <strong>Download results:</strong>
       <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: "green_jobs_data.json" %>
       &middot;
