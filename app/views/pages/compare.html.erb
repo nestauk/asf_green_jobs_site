@@ -24,7 +24,8 @@
       <%= pie_chart @occupations.limit(5).group(:green_overall_rating).count %>
     </div>
     <div class="w-full md:w-2/3 md:pl-8 mb-6">
-      <h2 class="text-lg font-bold mb-2">Top of green jobs</h2>
+      <h2 class="text-lg font-bold mb-1">Top green jobs</h2>
+      <p>By highest % of green skills and lowest GHG emissions.</p>
       <%= bar_chart @occupations.order(prop_green_skills: :desc, average_ind_perunit_ghg: :asc).limit(10).pluck(:name, :prop_green_skills).map { |i| [i[0], i[1].round(2)] } %>
     </div>
   </div>
