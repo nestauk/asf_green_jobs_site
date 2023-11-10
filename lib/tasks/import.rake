@@ -23,6 +23,9 @@ namespace :import do
       occ.top_not_green_skills = JSON.parse(row["top_5_not_green_skills"])
       occ.median_min_annualised_salary = row["median_min_annualised_salary"]
       occ.median_max_annualised_salary = row["median_max_annualised_salary"]
+      occ.average_ind_perunit_ghg = row["average_ind_perunit_ghg"]
+      occ.average_ind_prop_hours = row["average_ind_prop_hours"]
+      occ.average_ind_prop_workers = row["average_ind_prop_workers"]
 
       occ.save!
 
