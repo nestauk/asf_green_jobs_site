@@ -13,7 +13,7 @@
 
 <section class="max-w-screen-lg mx-auto p-4">
   <%= search_form_for @q do |f| %>
-    <div class="flex mt-2">
+    <div class="flex my-2">
       <div class="w-1/4">
         <%= f.label :green_overall_rating_in, 'Overall greeness' %>
         <%= f.collection_select :green_overall_rating_in, ["high", "mid-high", "low-mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
@@ -29,24 +29,36 @@
         <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
 
-      <div class="w-1/4 mb-2">
+      <div class="w-1/4">
         <%= f.label :green_industry_rating_in, 'Industry greeness' %>
         <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
-
     </div>
 
-    <div class="mb-2">
-      <%= f.label :industries_id_in, 'Industries' %>
-      <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+    <div class="flex my-2">
+      <div class="w-1/2">
+        <%= f.label :industries_id_in, 'Industries' %>
+        <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
+
+      <div class="w-1/2">
+        <%= f.label :regions_id_in, 'Regions' %>
+        <%= f.collection_select :regions_id_in, Region.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      </div>
     </div>
 
     <%= f.button 'Filter', type: 'submit', class: "text-white bg-blue-800 py-1 px-2 mb-8" %>
     <%= link_to 'Reset', occupations_path, class: 'ml-1 py-1 px-2 inline-block no-underline bg-blue-200' %>
   <% end %>
 
-  <div class="mb-6">
-    <%= page_entries_info @occupations %>
+  <div class="mb-6 flex flex-wrap justify-between">
+    <p class="w-full md:w-1/2"><%= page_entries_info @occupations %></p>
+    <p class="w-full mt-3 md:mt-0 md:w-1/2 text-sm md:text-right">
+      <strong>Download results:</strong>
+      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: "green_jobs_data.json" %>
+      &middot;
+      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: 'csv') %>
+    </p>
   </div>
 
   <%- @occupations.each do |o| %>

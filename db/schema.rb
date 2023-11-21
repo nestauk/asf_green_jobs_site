@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_10_140150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
     t.string "sic_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.bigint "occupation_id", null: false
+    t.bigint "region_id", null: false
+    t.decimal "percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["occupation_id"], name: "index_locations_on_occupation_id"
+    t.index ["region_id"], name: "index_locations_on_region_id"
   end
 
   create_table "occupations", force: :cascade do |t|
@@ -37,6 +47,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
     t.string "green_industry_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "median_min_annualised_salary"
+    t.integer "median_max_annualised_salary"
+    t.decimal "average_ind_perunit_ghg"
+    t.decimal "average_ind_prop_hours"
+    t.decimal "average_ind_prop_workers"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "segments", force: :cascade do |t|
@@ -50,6 +72,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_145849) do
     t.index ["occupation_id"], name: "index_segments_on_occupation_id"
   end
 
+  add_foreign_key "locations", "occupations"
+  add_foreign_key "locations", "regions"
   add_foreign_key "segments", "industries"
   add_foreign_key "segments", "occupations"
 end
