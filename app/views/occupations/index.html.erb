@@ -35,18 +35,6 @@
       </div>
     </div>
 
-    <div class="flex my-2">
-      <div class="w-1/2">
-        <%= f.label :industries_id_in, 'Industries' %>
-        <%= f.collection_select :industries_id_in, Industry.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
-      </div>
-
-      <div class="w-1/2">
-        <%= f.label :regions_id_in, 'Regions' %>
-        <%= f.collection_select :regions_id_in, Region.order(:name), :id, :name, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
-      </div>
-    </div>
-
     <%= f.button 'Filter', type: 'submit', class: "text-white bg-blue-800 py-1 px-2 mb-8" %>
     <%= link_to 'Reset', occupations_path, class: 'ml-1 py-1 px-2 inline-block no-underline bg-blue-200' %>
   <% end %>
