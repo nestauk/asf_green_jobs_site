@@ -9,7 +9,7 @@ namespace :import do
 
       occ = Occupation.find_or_initialize_by(name: row["clean_soc_name"])
 
-      occ.description = row["soc_description"]
+      occ.description = row["soc_description"] || row["clean_soc_name"]
       occ.avg_num_skills = row["average_num_skills"]
       occ.green_industry_rating = row["ind_greenness"] || "unknown"
       occ.green_occupation_rating = row["occ_greenness"] || "unknown"
@@ -38,7 +38,7 @@ namespace :import do
         seg.save!
       end
 
-      JSON.parse(row["top_5_itl2_prop"])[0].each do |k, v|
+      JSON.parse(row["top_5_itl2_quotient"])[0].each do |k, v|
         region = Region.find_or_create_by!(name: k)
 
         loc = Location.find_or_initialize_by(occupation: occ, region: region)
