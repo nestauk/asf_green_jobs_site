@@ -24,7 +24,7 @@
         &middot;
         <%= link_to 'Compare', compare_path %>
         &middot;
-        <%= link_to 'About', 'https://www.nesta.org.uk/project/measuring-green-jobs-and-skills/', target: '_blank' %>
+        <%= link_to 'About', 'https://www.nesta.org.uk/project/measuring-green-jobs-and-skills/', target: '_blank', rel: 'noopener' %>
       </nav>
 
       <div class="mt-4 pt-2 border-t border-stone-300 text-sm">
@@ -42,16 +42,16 @@
     <footer class="text-sm text-stone-700 container max-w-screen-lg mx-auto px-4 py-6 border-t border-stone-300">
       <p class="mb-2">
         Developed by
-        <%= link_to 'Nesta', 'https://www.nesta.org.uk/', taget: '_blank' %>
+        <%= link_to 'Nesta', 'https://www.nesta.org.uk/', taget: '_blank', rel: 'noopener' %>
         as part of our work on measuring green jobs and skills.
       </p>
 
       <div class="flex gap-3">
-        <%= link_to 'Methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank' %>
+        <%= link_to 'Methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank', rel: 'noopener' %>
         &middot;
-        <%= link_to 'Datasets used', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/dev/dap_prinz_green_jobs/pipeline/green_measures/industries#datasets-used', target: '_blank' %>
+        <%= link_to 'Datasets used', sources_path %>
         &middot;
-        <%= link_to 'Source code', 'https://github.com/nestauk/asf_green_jobs_site', target: '_blank' %>
+        <%= link_to 'Source code', 'https://github.com/nestauk/asf_green_jobs_site', target: '_blank', rel: 'noopener' %>
       </div>
 
     </footer>

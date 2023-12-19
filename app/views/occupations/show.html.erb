@@ -75,11 +75,11 @@
   <article class="md:pl-8 w-full md:w-2/3">
     <p class="mb-4 text-lg">Based on analysing <strong><%= @occupation.num_job_ads %></strong> job ads this job spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(@occupation.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(@occupation.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
 
-    <p class="mb-2"><strong>Top 5 regions</strong></p>
+    <p class="mb-2"><strong>Top regions</strong></p>
     <ul class="list-disc mb-8">
       <%- @occupation.ordered_regions.pluck(:id, :name, 'locations.percentage').each do |l| %>
         <li class="ml-5 mb-1">
-          <%= link_to l[1], occupations_path('q[regions_id_in][]' => l[0]) %>
+          <%= l[1] %>
           <small>(Found in <%= l[2].round(1) %>% of job ads)</small>
         </li>
       <% end %>
@@ -114,10 +114,10 @@
     <% end %>
 
     <h2 class="mt-6 mb-2 font-bold text-xl">Industries</h2>
-    <p class="mb-2">The top 5 industries which job ads for this occupation are found in.</p>
+    <p class="mb-2">The top industries which job ads for this occupation are found in.</p>
     <%- @occupation.segments.each do |s| %>
       <div class="px-3 p-2 my-2 bg-stone-200">
-        <p><%= link_to s.industry.name, occupations_path('q[industries_id_in][]' => s.industry_id) %></p>
+        <p><%= s.industry.name %></p>
         <small class="text-stone-700">
           Found in <%= s.count %> job ads (<%= (s.percentage * 100).round(1) %>%)
         </small>
@@ -148,7 +148,7 @@
       </h3>
       <p>
         This analysis has been compiled by measuring the greenness of online job adverts. You can read more about the
-        <%= link_to 'methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank' %>
+        <%= link_to 'methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank', rel: 'noopener' %>
         here.
       </p>
     </div>

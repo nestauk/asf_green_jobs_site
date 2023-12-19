@@ -12,7 +12,7 @@
     <p class="mb-4">Based on analysing <strong><%= o.num_job_ads %></strong> job ads this job spends <strong><%= o.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= o.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (o.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(o.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(o.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
 
     <p class="mb-4 text-sm">
-      <strong>Top 5 regions:</strong>
+      <strong>Top regions:</strong>
       <%= o.ordered_regions.pluck(:name).to_sentence %>.
     </p>
 
