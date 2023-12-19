@@ -11,15 +11,4 @@ module ApplicationHelper
       ' bg-amber-700 text-white'
     end
   end
-
-  def rating_to_sentence_word(rating)
-    case rating
-    when 'high'
-      'higest'
-    when 'mid'
-      'middle'
-    when 'low'
-      'lowest'
-    end
-  end
 end
