@@ -2,13 +2,21 @@
 
 <section class="bg-slate-800">
   <div class="max-w-screen-lg mx-auto p-4">
-    <p class="text-stone-400 mt-8 mb-3">
+    <div class="text-stone-400 mt-8 mb-3 flex gap-2 items-center">
       Occupation
       &middot;
-      <small class="text-stone-600 text-xs px-2 py-1 rounded<%= greeness_bg(@occupation.green_overall_rating) %>">
-        <%= @occupation.green_overall_rating %> greeness
+      <small class="text-stone-600 text-xs px-2 py-1 rounded<%= greenness_bg(@occupation.green_overall_rating) %>">
+        <%= @occupation.green_overall_rating %> greenness
       </small>
-    </p>
+      <div class="group relative w-max">
+        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF" stroke-width="1.5"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM10.3446 7.60313C10.0001 7.89541 9.75 8.34102 9.75 9.00001C9.75 9.41422 9.41421 9.75001 9 9.75001C8.58579 9.75001 8.25 9.41422 8.25 9.00001C8.25 7.90898 8.68736 7.04209 9.37414 6.45937C10.0446 5.89048 10.9119 5.625 11.75 5.625C12.5882 5.625 13.4554 5.89049 14.1259 6.45938C14.8126 7.0421 15.25 7.90899 15.25 9.00001C15.25 9.76589 15.0538 10.3495 14.7334 10.8301C14.4642 11.234 14.1143 11.5462 13.839 11.7919L13.839 11.7919L13.8385 11.7923L13.8366 11.794C13.8074 11.8201 13.779 11.8454 13.7517 11.87C13.4445 12.1464 13.213 12.3743 13.0433 12.6741C12.881 12.9609 12.75 13.3616 12.75 13.9999C12.75 14.4142 12.4142 14.7499 12 14.7499C11.5858 14.7499 11.25 14.4142 11.25 13.9999C11.25 13.1383 11.4315 12.4765 11.7379 11.9352C12.037 11.4069 12.4305 11.041 12.7483 10.755L12.8205 10.6901C13.1207 10.4204 13.3276 10.2347 13.4853 9.99803C13.6337 9.77553 13.75 9.48414 13.75 9.00001C13.75 8.34103 13.4999 7.89542 13.1554 7.60314C12.7946 7.29702 12.2868 7.125 11.75 7.125C11.2131 7.125 10.7054 7.29702 10.3446 7.60313ZM12.5675 18.5008C12.8446 18.1929 12.8196 17.7187 12.5117 17.4416C12.2038 17.1645 11.7296 17.1894 11.4525 17.4973L11.4425 17.5084C11.1654 17.8163 11.1904 18.2905 11.4983 18.5676C11.8062 18.8447 12.2804 18.8197 12.5575 18.5119L12.5675 18.5008Z" fill="#FFFFFF"></path></svg>
+        <span
+          class="pointer-events-none absolute -top-7 -left-28 p-2 text-sm text-black rounded w-64 opacity-0 transition-opacity group-hover:opacity-100 bg-slate-100"
+        >
+          This is the sum of the occupation, skills and industry greenness scores. If this value is 0 or 1 then the overall greenness is “low”, if it's 2 or 3 then the overall greenness is “low-mid”, if its 4 or 5 then the overall greenness is “mid-high”, and if the sum is 6 then the overall greenness is “high”.
+        </span>
+      </div>
+    </div>
 
     <h1 class="text-5xl text-white font-bold mb-6">
       <%= @occupation.name %>
@@ -31,11 +39,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_occupation_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
       </div>
       <p class="text-sm text-stone-700">
-        When the values for the % time spent on green tasks per occupation are split equally into thirds, this occupations' value sits in the
-        <strong>
-          <%= rating_to_sentence_word(@occupation.green_occupation_rating) %>
-        </strong>
-        third.
+        This rating is based on % time spent on green tasks for this occupation, calculated using estimates of the fraction of overall time spent doing green tasks (using <%= link_to 'O*NET 2011  green task definitions', 'https://www.onetcenter.org/dl_files/GreenRef.pdf', class: 'link', target: '_blank', rel: 'noopener' %>).
       </p>
     </div>
 
@@ -47,11 +51,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_skills_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
       </div>
       <p class="text-sm text-stone-700">
-        When the values for the average proportion of green skills per occupation are split equally into thirds, this occupations' value sits in the
-        <strong>
-          <%= rating_to_sentence_word(@occupation.green_skills_rating) %>
-        </strong>
-        third.
+        This is based on the average proportion of green skills for this occupation. This is the % of skills out of all the skills associated with the occupation that are "green", meaning that they were found in the <%= link_to 'ESCO Green Skill list', 'https://ec.europa.eu/esco/portal/skill', class: 'link', target: '_blank', rel: 'noopener' %>.
       </p>
     </div>
 
@@ -63,11 +63,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="<%= ['high'].include?(@occupation.green_industry_rating) ? '#000' : 'none' %>" stroke-width="1.5" viewBox="0 0 24 24" color="#000000"><path stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m8.587 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.808.844a.902.902 0 0 1 .503 1.542l-4.202 4.07.992 5.75c.127.738-.653 1.3-1.32.952L12 18.678l-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"></path></svg>
       </div>
       <p class="text-sm text-stone-700">
-        When the values for the average per unit GHG emissions for industries this occupation sit in are split equally into thirds, this occupations' value sits in the
-        <strong>
-          <%= rating_to_sentence_word(@occupation.green_industry_rating) %>
-        </strong>
-        third.
+        This rating is based on average per unit GHG emissions for industries this occupation sits in (using <%= link_to 'ONS 2022 data on atmospheric emissions', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %>).
       </p>
     </div>
   </aside>
@@ -75,17 +71,16 @@
   <article class="md:pl-8 w-full md:w-2/3">
     <p class="mb-4 text-lg">Based on analysing <strong><%= @occupation.num_job_ads %></strong> job ads this job spends <strong><%= @occupation.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= @occupation.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (@occupation.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(@occupation.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(@occupation.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
 
-    <p class="mb-2"><strong>Top 5 regions</strong></p>
-    <ul class="list-disc mb-8">
-      <%- @occupation.ordered_regions.pluck(:id, :name, 'locations.percentage').each do |l| %>
-        <li class="ml-5 mb-1">
-          <%= link_to l[1], occupations_path('q[regions_id_in][]' => l[0]) %>
-          <small>(Found in <%= l[2].round(1) %>% of job ads)</small>
-        </li>
-      <% end %>
-    </ul>
+    <h2 class="mt-6 font-bold text-xl">Top regions</h2>
+    <p class="my-2">At the point of upload, job adverts are tagged with a specific location. These locations are standardised to ITL 2 (International Territory Levels) codes. For each ITL region, we divide the proportion of job adverts for an occupation by the proportion for all occupations - this gives us a measure of which regions have proportionally more or less job adverts for each occupation - we call this the "location quotient". We display the ITL regions with the highest location quotients for this occupation.</p>
+    <%- @occupation.ordered_regions.limit(5).each do |l| %>
+      <div class="px-3 p-2 my-2 bg-stone-200">
+        <%= l.name %>
+      </div>
+    <% end %>
 
-    <h2 class="mt-6 mb-2 font-bold text-xl">Top green skills for this occupation</h2>
+    <h2 class="mt-6 font-bold text-xl">Top green skills for this occupation</h2>
+    <p class="my-2">For each job advert we extract the green skills it asks for. We display the 5 most commonly asked for green skills for this occupation.</p>
     <% if @occupation.top_green_skills.any? %>
       <%- @occupation.top_green_skills.each do |s| %>
         <div class="px-3 p-2 my-2 bg-stone-200">
@@ -99,7 +94,8 @@
       <p>None</p>
     <% end %>
 
-    <h2 class="mt-6 mb-2 font-bold text-xl">Top non-green skills for this occupation</h2>
+    <h2 class="mt-6 mb-2 font-bold text-xl">Top skills for this occupation</h2>
+    <p class="my-2">For each job advert we extract the skills it asks for. We display the 5 most commonly asked for skills (green or not) for this occupation.</p>
     <% if @occupation.top_not_green_skills.any? %>
       <%- @occupation.top_not_green_skills.each do |s| %>
         <div class="px-3 p-2 my-2 bg-stone-200">
@@ -113,11 +109,11 @@
       <p>None</p>
     <% end %>
 
-    <h2 class="mt-6 mb-2 font-bold text-xl">Industries</h2>
-    <p class="mb-2">The top 5 industries which job ads for this occupation are found in.</p>
-    <%- @occupation.segments.each do |s| %>
+    <h2 class="mt-6 font-bold text-xl">Industries</h2>
+    <p class="my-2">We extract industry information from job adverts using the way the company is described in the advert. We display the most common industries job adverts in this occupation are linked to.</p>
+    <%- @occupation.segments.limit(5).each do |s| %>
       <div class="px-3 p-2 my-2 bg-stone-200">
-        <p><%= link_to s.industry.name, occupations_path('q[industries_id_in][]' => s.industry_id) %></p>
+        <p><%= s.industry.name %></p>
         <small class="text-stone-700">
           Found in <%= s.count %> job ads (<%= (s.percentage * 100).round(1) %>%)
         </small>
@@ -125,10 +121,10 @@
     <% end %>
 
     <h2 class="mt-6 mb-1 font-bold text-xl">Similar occupations</h2>
+    <p class="my-2">Since we extract skills information from each job advert, we can build a picture of the commonly asked for skills for each occupation. This allows us to compare these skill profiles across occupations and therefore show the most similar occupations based on skills asked for.</p>
     <p class="text-sm mb-3 text-stone-700">
       Please note the following occupations are examples only and not necessarily similar ones. If you would find this feature useful then please
-      <%= link_to 'let us know', 'mailto:info@nesta.org.uk?subject=Feature Request - Green Jobs Tool' %>
-      .
+      <%= link_to 'let us know', 'mailto:info@nesta.org.uk?subject=Feature Request - Green Jobs Tool' %>.
     </p>
 
     <%- Occupation.all.sample(3).each do |o| %>
@@ -137,9 +133,9 @@
 
     <p class="my-8">
       <strong>Download results:</strong>
-      <%= link_to 'JSON', occupation_path(@occupation, format: :json), download: "green_jobs_data.json" %>
+      <%= link_to 'JSON', occupation_path(@occupation, format: :json), download: 'green_jobs_data.json', class: 'text-blue-700' %>
       &middot;
-      <%= link_to 'CSV', occupation_path(@occupation, format: :csv), download: "green_jobs_data.json" %>
+      <%= link_to 'CSV', occupation_path(@occupation, format: :csv), download: 'green_jobs_data.csv', class: 'text-blue-700' %>
     </p>
 
     <div class="my-8 p-4 bg-slate-200">
@@ -148,7 +144,7 @@
       </h3>
       <p>
         This analysis has been compiled by measuring the greenness of online job adverts. You can read more about the
-        <%= link_to 'methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank' %>
+        <%= link_to 'methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/tree/rerun_analysis/dap_prinz_green_jobs/pipeline/green_measures/industries/sic_mapper#%EF%B8%8F-methodology', target: '_blank', rel: 'noopener' %>
         here.
       </p>
     </div>

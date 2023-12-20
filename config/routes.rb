@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :occupations, only: %i[index show]
 
   get '/compare', to: 'pages#compare', as: 'compare'
+  get '/sources', to: 'pages#sources', as: 'sources'
 end

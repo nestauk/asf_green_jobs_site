@@ -7,25 +7,35 @@
       Developing a way to measure and identify green jobs to help grow the sector.
     </p>
 
-    <%= link_to 'Explore top green jobs', occupations_path, class: 'inline-block mb-4 bg-blue-700 hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' %>
+    <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-blue-700 hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+      <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M10.5857 10.5857L16.9496 7.0502L13.4141 13.4142L7.05012 16.9497L10.5857 10.5857Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Explore green jobs
+    <% end %>
+
+    <%= link_to compare_path, class: 'inline-flex felx gap-2 mb-4 bg-violet-700 hover:bg-violet-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+      <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M9 21H15M9 21V16M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.6C3 16.2686 3.26863 16 3.6 16H9M15 21V9M15 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H15.6C15.2686 3 15 3.26863 15 3.6V9M15 9H9.6C9.26863 9 9 9.26863 9 9.6V16" stroke="#FFFFFF" stroke-width="1.5"></path></svg>
+      Compare green jobs
+    <% end %>
   </div>
 </section>
 
 <section class="max-w-prose mx-auto px-4 my-8">
-  <p class="my-5">Or, jump to an occupation...</p>
-
-  <select data-controller="choices" data-action="choices#occupation">
-    <option value=""></option>
-    <%- Occupation.order(:name).each do |o| %>
-      <option value=<%= o.id %>><%= o.name %></option>
-    <% end %>
-  </select>
-
   <h2 class="text-xl font-bold mb-2">About this tool</h2>
   <p class="mb-4">
-    This tool is part of a project that aims to develop a way of measuring the greenness of online job adverts. Without a clear definition of what green jobs and skills are, and useful ways to measure them, policymakers, employers and other crucial actors cannot make informed decisions or plan effectively for one of our most significant workforce transitions.
+    At Nesta, we're measuring the greenness of every job advert to help facilitate the transition of the UK workforce to net zero. Central to this research is our ever-growing database of almost 8 million online job postings, collected since 2021.
   </p>
-  <p>
-    We want to help solve this problem by creating an open-source approach to measure greenness at the job advert level, using a multi-dimensional measure to identify how green a given job advert is based on industry, occupation and skills. This prototype tool is one way we're making this data available and usable to people interested in the green jobs system.
+  <p class="mb-4">
+    To generate rich and novel data about green jobs, we extract information about skills, occupation and industry from job adverts. Once this information is extracted, we match it to existing datasets that tell us how green a given skill, occupation or industry is.
+  </p>
+  <p class="mb-4">
+    For example, a job advert may have a high proportion of skills that are found within validated green skill lists; the occupation the job advert is advertising for may have a high green timeshare (based on validated green task definitions); and the industry the role is advertised in may have low greenhouse gas emissions per employee.
+  </p>
+  <p class="mb-4">
+    To make the data on these measures for our millions of job adverts more digestible, this tool aggregates and averages the data per standardised occupation and region. This allows us to give each occupation three green ratings, depending on: the skills required for that occupation, whether the occupation itself is considered green, and the industry the occupation most commonly appears in. We also aggregate these measures to produce a measure of "overall greenness".
+  </p>
+
+  <h3 class="text-lg font-bold mb-2 text-gray-600">Good to know</h3>
+  <p class="text-gray-600">
+    The data you can explore here is produced from a random sample of 1 million job adverts collected since 2021. The data is also deduplicated where two job adverts are posted from the same location and have the same job description. Due to this, we are unable to make a comment about demand for a given occupation or provide information on the number of “green jobs”. Rather, the tool provides detailed information about the comparative greenness of occupations and regions, as well as giving information about the green skills commonly asked for per occupation.
   </p>
 </section>
