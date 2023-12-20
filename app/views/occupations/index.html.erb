@@ -1,4 +1,4 @@
-<% content_for :title, 'Top green jobs' %>
+<% content_for :title, 'Explore green jobs' %>
 
 <section class="bg-slate-800">
   <div class="max-w-screen-lg mx-auto p-4">
@@ -13,24 +13,27 @@
 
 <section class="max-w-screen-lg mx-auto p-4">
   <%= search_form_for @q do |f| %>
+    <%= f.label :name_eq, 'Occupation name' %>
+    <%= f.collection_select :name_eq, Occupation.order(:name), :name, :name, { include_blank: true }, { class: 'mb-4', data: { controller: "choices" } } %>
+
     <div class="flex my-2">
       <div class="w-1/4">
-        <%= f.label :green_overall_rating_in, 'Overall greeness' %>
+        <%= f.label :green_overall_rating_in, 'Overall greenness' %>
         <%= f.collection_select :green_overall_rating_in, ["high", "mid-high", "low-mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
 
       <div class="w-1/4">
-        <%= f.label :green_occupation_rating_in, 'Occupation greeness' %>
+        <%= f.label :green_occupation_rating_in, 'Occupation greenness' %>
         <%= f.collection_select :green_occupation_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
 
       <div class="w-1/4">
-        <%= f.label :green_skills_rating_in, 'Skills greeness' %>
+        <%= f.label :green_skills_rating_in, 'Skills greenness' %>
         <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
 
       <div class="w-1/4">
-        <%= f.label :green_industry_rating_in, 'Industry greeness' %>
+        <%= f.label :green_industry_rating_in, 'Industry greenness' %>
         <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
       </div>
     </div>

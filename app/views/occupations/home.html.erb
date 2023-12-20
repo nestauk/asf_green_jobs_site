@@ -20,15 +20,6 @@
 </section>
 
 <section class="max-w-prose mx-auto px-4 my-8">
-  <p class="my-5">Or, jump to an occupation...</p>
-
-  <select data-controller="choices" data-action="choices#occupation">
-    <option value=""></option>
-    <%- Occupation.order(:name).each do |o| %>
-      <option value=<%= o.id %>><%= o.name %></option>
-    <% end %>
-  </select>
-
   <h2 class="text-xl font-bold mb-2">About this tool</h2>
   <p class="mb-4">
     At Nesta, we're measuring the greenness of every job advert to help facilitate the transition of the UK workforce to net zero. Central to this research is our ever-growing database of almost 8 million online job postings, collected since 2021.

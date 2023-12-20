@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def greeness_bg(rating)
+  def greenness_bg(rating)
     case rating
     when 'high'
       ' bg-emerald-700 text-white'
