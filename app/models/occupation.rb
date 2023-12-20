@@ -15,6 +15,10 @@ class Occupation < ApplicationRecord
     ["name", "green_industry_rating", "green_occupation_rating", "green_overall_rating", "green_skills_rating"]
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["industries", "locations", "regions", "segments"]
+  end
+
   def self.to_csv(iterable)
     CSV.generate do |csv|
       filtered_columns = column_names.excluding("id", "created_at", "updated_at", "top_green_skills", "top_not_green_skills")
