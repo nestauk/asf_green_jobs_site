@@ -14,27 +14,22 @@
 <section class="max-w-screen-lg mx-auto p-4">
   <%= search_form_for @q do |f| %>
     <%= f.label :name_eq, 'Occupation name' %>
-    <%= f.collection_select :name_eq, Occupation.order(:name), :name, :name, { include_blank: true }, { class: 'mb-4', data: { controller: "choices" } } %>
+    <%= f.collection_select :name_eq, Occupation.order(:name), :name, :name, { include_blank: true }, { class: 'mb-2', data: { controller: "choices" } } %>
 
-    <div class="flex my-2">
-      <div class="w-1/4">
-        <%= f.label :green_overall_rating_in, 'Overall greenness' %>
-        <%= f.collection_select :green_overall_rating_in, ["high", "mid-high", "low-mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+    <div class="flex flex-wrap mb-2">
+      <div class="w-full sm:w-1/3 sm:pr-1">
+        <%= f.label :green_skills_rating_in, 'No. of green skills' %>
+        <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-2', data: { controller: "choices" } } %>
       </div>
 
-      <div class="w-1/4">
-        <%= f.label :green_occupation_rating_in, 'Occupation greenness' %>
-        <%= f.collection_select :green_occupation_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      <div class="w-full sm:w-1/3 sm:px-1">
+        <%= f.label :green_industry_rating_in, 'Industry emissions' %>
+        <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-2', data: { controller: "choices" } } %>
       </div>
 
-      <div class="w-1/4">
-        <%= f.label :green_skills_rating_in, 'Skills greenness' %>
-        <%= f.collection_select :green_skills_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
-      </div>
-
-      <div class="w-1/4">
-        <%= f.label :green_industry_rating_in, 'Industry greenness' %>
-        <%= f.collection_select :green_industry_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-4', data: { controller: "choices" } } %>
+      <div class="w-full sm:w-1/3 sm:pl-1">
+        <%= f.label :green_occupation_rating_in, 'Time on green tasks' %>
+        <%= f.collection_select :green_occupation_rating_in, ["high", "mid", "low"], :to_s, :to_s, { include_blank: true }, { multiple: true, class: 'mb-2', data: { controller: "choices" } } %>
       </div>
     </div>
 
@@ -44,11 +39,10 @@
 
   <div class="mb-6 flex flex-wrap justify-between">
     <p class="w-full md:w-1/2"><%= page_entries_info @occupations %></p>
-    <p class="w-full mt-3 md:mt-0 md:w-1/2 text-sm md:text-right">
+    <p class="w-full mt-3 md:mt-0 md:w-1/2 md:text-right">
       <strong>Download results:</strong>
-      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: 'green_jobs_data.json', class: 'text-blue-700' %>
-      &middot;
-      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: :csv), download: 'green_jobs_data.csv', class: 'text-blue-700' %>
+      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: 'green_jobs_data.json', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
+      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: :csv), download: 'green_jobs_data.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
     </p>
   </div>
 
@@ -56,7 +50,7 @@
     <%= render 'card', o: o %>
   <% end %>
 
-  <div class="my-6">
+  <div class="my-6 text-center">
     <%= paginate @occupations %>
   </div>
 </section>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        font-family: Arial;
+      }
+      #vis.vega-embed {
+        width: 100%;
+        display: flex;
+      }
+
+      #vis.vega-embed details,
+      #vis.vega-embed details summary {
+        position: relative;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/vega@5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/vega-embed@6"
+    ></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+    <script>
+      (function (vegaEmbed) {
+        var spec = {
+          config: {
+            title: { font: "Century Gothic", anchor: "start" },
+            axis: {
+              labelFont: "Century Gothic",
+              titleFont: "Century Gothic",
+              gridColor: "grey",
+              gridDash: [1, 7],
+              labelFontSize: 13,
+              titleFontSize: 13,
+            },
+            header: {
+              labelFont: "Century Gothic",
+              titleFont: "Century Gothic",
+            },
+            legend: {
+              labelFont: "Century Gothic",
+              titleFont: "Century Gothic",
+              labelFontSize: 13,
+              titleFontSize: 16,
+            },
+            range: {
+              category: [
+                "#FDB633",
+                "#18A48C",
+                "#9A1BBE",
+                "#EB003B",
+                "#FF6E47",
+                "#646363",
+                "#0F294A",
+                "#97D9E3",
+                "#A59BEE",
+                "#F6A4B7",
+                "#D2C9C0",
+                "#000000",
+              ],
+              ordinal: {
+                scheme: [
+                  "#FDB633",
+                  "#18A48C",
+                  "#9A1BBE",
+                  "#EB003B",
+                  "#FF6E47",
+                  "#646363",
+                  "#0F294A",
+                  "#97D9E3",
+                  "#A59BEE",
+                  "#F6A4B7",
+                  "#D2C9C0",
+                  "#000000",
+                ],
+              },
+            },
+            view: { strokeWidth: 0 },
+          },
+          data: { name: "data-afc7b7abe7c33a4f1d92d79f64e73bb1" },
+          mark: { type: "bar" },
+          encoding: {
+            color: { value: "#FDB633" },
+            x: {
+              field: "degree centrality",
+              title: "Degree Centrality",
+              type: "quantitative",
+            },
+            y: {
+              axis: { labelLimit: 500 },
+              field: "skill_name_wrapped",
+              sort: "-x",
+              title: "",
+              type: "nominal",
+            },
+          },
+          height: 400,
+          title: {
+            anchor: "start",
+            text: "",
+            fontSize: 16,
+            subtitle: "",
+            subtitleFont: "Century Gothic",
+            subtitleFontSize: 13,
+          },
+          width: "container",
+          $schema: "https://vega.github.io/schema/vega-lite/v5.15.1.json",
+          datasets: {
+            "data-afc7b7abe7c33a4f1d92d79f64e73bb1": [
+              {
+                skill: "S8.5.4",
+                "degree centrality": 0.008342602892102336,
+                skill_name: "operating food processing machinery",
+                skill_name_wrapped: ["operating food processing machinery"],
+                perc_in_green_occs: 0.15288721627660826,
+                num_in_green_occs: 52,
+              },
+              {
+                skill: "a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+                "degree centrality": 0.006117908787541713,
+                skill_name:
+                  "strive to provide customers with the best possible service",
+                skill_name_wrapped: [
+                  "strive to provide customers with the best possible",
+                  "service",
+                ],
+                perc_in_green_occs: 2.3756321298365286,
+                num_in_green_occs: 808,
+              },
+              {
+                skill: "60c78287-22eb-4103-9c8c-28deaa460da0",
+                "degree centrality": 0.0055617352614015575,
+                skill_name: "work in teams",
+                skill_name_wrapped: ["work in teams"],
+                perc_in_green_occs: 1.405386334234976,
+                num_in_green_occs: 478,
+              },
+              {
+                skill: "e3f2c37f-e484-4b4c-ad82-f565a2b98f89",
+                "degree centrality": 0.0055617352614015575,
+                skill_name: "environmental management monitors",
+                skill_name_wrapped: ["environmental management monitors"],
+                perc_in_green_occs: 0.002940138774550159,
+                num_in_green_occs: 1,
+              },
+              {
+                skill: "f8413360-6114-40de-a276-c59b764b9913",
+                "degree centrality": 0.0055617352614015575,
+                skill_name: "renewable energy technology",
+                skill_name_wrapped: ["renewable energy technology"],
+                perc_in_green_occs: 0.005880277549100318,
+                num_in_green_occs: 2,
+              },
+              {
+                skill: "d4cc5022-7801-4885-bcff-166552788d35",
+                "degree centrality": 0.006674082313681868,
+                skill_name: "propose new strategies",
+                skill_name_wrapped: ["propose new strategies"],
+                perc_in_green_occs: 1.0114077384452547,
+                num_in_green_occs: 344,
+              },
+              {
+                skill: "fba826dc-c801-446b-9bde-b989cea1b1c3",
+                "degree centrality": 0.0055617352614015575,
+                skill_name:
+                  "liaise between the customer and various transport services",
+                skill_name_wrapped: [
+                  "liaise between the customer and various transport",
+                  "services",
+                ],
+                perc_in_green_occs: 0.5115841467717277,
+                num_in_green_occs: 174,
+              },
+              {
+                skill: "c69587b4-05d3-45bb-b79b-9b85e6603fc2",
+                "degree centrality": 0.006117908787541713,
+                skill_name: "provide technical expertise",
+                skill_name_wrapped: ["provide technical expertise"],
+                perc_in_green_occs: 1.29660119957662,
+                num_in_green_occs: 441,
+              },
+              {
+                skill: "03b9b491-fc9b-4868-914a-bf7cd47b5041",
+                "degree centrality": 0.006117908787541713,
+                skill_name: "create solution to problems",
+                skill_name_wrapped: ["create solution to problems"],
+                perc_in_green_occs: 0.9702457956015523,
+                num_in_green_occs: 330,
+              },
+              {
+                skill: "c4e9f0d0-bbdd-42d7-83a5-2c131f6d67c2",
+                "degree centrality": 0.006674082313681868,
+                skill_name: "develop energy policy",
+                skill_name_wrapped: ["develop energy policy"],
+                perc_in_green_occs: 0.002940138774550159,
+                num_in_green_occs: 1,
+              },
+            ],
+          },
+        };
+        var embedOpt = { mode: "vega-lite" };
+
+        function showError(el, error) {
+          el.innerHTML =
+            '<div style="color:red;">' +
+            "<p>JavaScript Error: " +
+            error.message +
+            "</p>" +
+            "<p>This usually means there's a typo in your chart specification. " +
+            "See the javascript console for the full traceback.</p>" +
+            "</div>";
+          throw error;
+        }
+        const el = document.getElementById("vis");
+        vegaEmbed("#vis", spec, embedOpt).catch((error) =>
+          showError(el, error)
+        );
+      })(vegaEmbed);
+    </script>
+  </body>
+</html>
