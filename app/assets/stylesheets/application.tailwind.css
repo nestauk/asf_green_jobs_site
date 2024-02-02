@@ -6,6 +6,9 @@
   a {
     @apply underline hover:no-underline;
   }
+  .choices {
+    @apply mb-2 !important;
+  }
 }
 
 .bg-img {

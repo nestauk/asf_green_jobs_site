@@ -1,21 +1,5 @@
 <div class="mb-6">
   <div class="bg-stone-300 p-4">
-
-    <div class="mb-2 flex gap-1 items-center">
-      <small class="text-stone-600 text-sm px-2 py-1 rounded<%= greenness_bg(o.green_overall_rating) %>">
-        <%= o.green_overall_rating %> greenness
-      </small>
-
-      <div class="group relative w-max">
-        <svg width="20px" height="20px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 9C9 5.49997 14.5 5.5 14.5 9C14.5 11.5 12 10.9999 12 13.9999" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 18.01L12.01 17.9989" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <span
-          class="pointer-events-none absolute -top-7 -left-28 p-2 text-sm text-black rounded w-64 opacity-0 transition-opacity group-hover:opacity-100 bg-slate-100"
-        >
-          This is the sum of the occupation, skills and industry greenness scores. If this value is 0 or 1 then the overall greenness is “low”, if it's 2 or 3 then the overall greenness is “low-mid”, if its 4 or 5 then the overall greenness is “mid-high”, and if the sum is 6 then the overall greenness is “high”.
-        </span>
-      </div>
-    </div>
-
     <h2 class="text-blue-700 text-xl font-bold mb-2"><%= link_to o.name, o %></h2>
 
     <p class="mb-4">Based on analysing <strong><%= o.num_job_ads %></strong> job ads this job spends <strong><%= o.green_timeshare.round(1) %>%</strong> of the time doing green tasks. A job advert for this occupation has on average <strong><%= o.avg_num_skills.round(0) %></strong> skills asked for, of which <strong><%= (o.prop_green_skills * 100).round(1) %>%</strong> are green skills. The pay band for this job is between <strong><%= number_to_currency(o.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(o.median_max_annualised_salary, unit: "£", precision: 0) %></strong>.</p>
