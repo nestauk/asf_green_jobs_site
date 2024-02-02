@@ -39,11 +39,10 @@
 
   <div class="mb-6 flex flex-wrap justify-between">
     <p class="w-full md:w-1/2"><%= page_entries_info @occupations %></p>
-    <p class="w-full mt-3 md:mt-0 md:w-1/2 text-sm md:text-right">
+    <p class="w-full mt-3 md:mt-0 md:w-1/2 md:text-right">
       <strong>Download results:</strong>
-      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: 'green_jobs_data.json', class: 'text-blue-700' %>
-      &middot;
-      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: :csv), download: 'green_jobs_data.csv', class: 'text-blue-700' %>
+      <%= link_to 'JSON', occupations_path(q: request.query_parameters[:q], format: :json), download: 'green_jobs_data.json', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
+      <%= link_to "CSV", occupations_path(q: request.query_parameters[:q], format: :csv), download: 'green_jobs_data.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
     </p>
   </div>
 
