@@ -1,7 +1,5 @@
 <% content_for :title, 'Compare green jobs' %>
 
-<%# TODO: file sizes %>
-
 <section class="bg-slate-800">
   <div class="max-w-screen-lg mx-auto p-4">
     <h1 class="text-5xl text-white font-bold my-8">
@@ -25,7 +23,7 @@
       Explore where an occupation sits in the full distribution of the 3 greenness measures for occupation, industry and skills.
     </div>
     <div class="w-full md:w-8/12">
-      <%= render 'chart1' %>
+      <iframe src="/plots/chart1.html" frameborder="0" height="520px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 
@@ -34,7 +32,7 @@
       Select an industry measures and compare. Hover over an occupation point to learn more about them.
     </div>
     <div class="w-full md:w-8/12">
-      <%= render 'chart2' %>
+      <iframe src="/plots/chart2.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 
@@ -43,7 +41,7 @@
       Hover over an industry point to learn more about them.
     </div>
     <div class="w-full md:w-8/12">
-      <%= render 'chart3' %>
+      <iframe src="/plots/chart3.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 
@@ -56,7 +54,7 @@
       Average relative greenness measures per region. Select a greenness measure and see which regions have the highest values for it.
     </div>
     <div class="w-full md:w-8/12">
-      <%= render 'chart4' %>
+      <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 </section>
@@ -69,7 +67,7 @@
       <p>Explore commonly requested non-green skills in each occupation group based on overall greenness.</p>
     </div>
     <div class="w-full md:w-8/12">
-      <%= render 'chart5' %>
+      <iframe src="/plots/chart5.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 </section>
