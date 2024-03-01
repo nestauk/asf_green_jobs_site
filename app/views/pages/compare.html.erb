@@ -20,7 +20,7 @@
 
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      Explore where an occupation sits in the full distribution of the 3 greenness measures for occupation, industry and skills.
+      Explore the full distribution of the fraction of time spent doing green tasks, the average proportion of green skills, and the average GHG emissions for each occupation. Highlight a specific occupation from the drop down box.
     </div>
     <div class="w-full md:w-8/12">
       <iframe src="/plots/chart1.html" frameborder="0" height="520px" width="100%" class="overflow-hidden"></iframe>
@@ -29,7 +29,7 @@
 
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      Select an industry measures and compare. Hover over an occupation point to learn more about them.
+      We can explore how these values correlate with one another, allowing us to see the outliers and nuance in our dataset. In the following plot you can explore the occupations with the highest proportions of green skills but in the highest polluting industries (top right), and the least proportion of green skills but in the least polluting industries (bottom left).
     </div>
     <div class="w-full md:w-8/12">
       <iframe src="/plots/chart2.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
@@ -38,7 +38,7 @@
 
   <div class="flex flex-wrap overflow-hidden">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      Hover over an industry point to learn more about them.
+      In the next plot we dig into industries, where each point represents an industry rather than occupation. In this, we can explore how the average time spent on green tasks compares to the average proportion of green skills. 
     </div>
     <div class="w-full md:w-8/12">
       <iframe src="/plots/chart3.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
@@ -49,25 +49,47 @@
 
 <section class="max-w-screen-lg mx-auto p-4 my-8">
   <h2 class="text-3xl font-bold mb-8">The regional picture</h2>
-  <div class="flex flex-wrap overflow-hidden">
-    <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      Average relative greenness measures per region. Select a greenness measure and see which regions have the highest values for it.
-    </div>
-    <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>
-    </div>
+
+  <div class="w-full mb-4 pr-0 md:pr-8">
+      Our job adverts come from all over the UK, so by averaging our green measures for each region we can compare greenness regionally. In the following plots you can select a type of measure to compare (average proportion of green skills, average time spent on green tasks or average GHG emissions). You can also change the maps to break down the UK into different granularities - we use <%= link_to 'ITL regions', 'https://www.ons.gov.uk/methodology/geography/ukgeographies/eurostat', class: 'link', target: '_blank', rel: 'noopener' %> for this.
   </div>
+  <div class="w-full">
+    <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>
+  </div>
+
+
 </section>
 
 <section class="max-w-screen-lg mx-auto p-4 my-8">
   <h2 class="text-3xl font-bold mb-8">Digging deeper into skills</h2>
+
+  <p class="mb-4">The most requested green and not green skills across our job adverts are given in the plots below.</p>
+
+  <div class="w-full">
+    <iframe src="/plots/chart5a.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+  </div>
+
+  <div class="w-full">
+    <iframe src="/plots/chart5b.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+  </div>
+  
+
   <div class="flex flex-wrap overflow-hidden">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      <p class="mb-4">Not all skills in green occupations are considered green.</p>
-      <p>Explore commonly requested non-green skills in each occupation group based on overall greenness.</p>
+      <p>We can also compare occupations by how similar the skills they ask for are. In the following plot you can select an occupation and see which occupations it is most similar to in terms of skills asked for.</p>
     </div>
     <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart5.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+      <iframe src="/plots/chart7.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
+
+  <div class="flex flex-wrap overflow-hidden">
+    <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
+      <p>Not all skills in green occupations are considered green. Some of these skills will be transversal - for example communication skills are found across the majority of job adverts regardless of how green the job is. However, some of these skills may be new green skills which weren’t given in the green skill list we search through. To investigate these complimentary skills, we looked at the skills that commonly co-occurred with green skills in the job adverts from green occupations. The plot below shows these.</p>
+    </div>
+    <div class="w-full md:w-8/12">
+      <iframe src="/plots/chart8.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+    </div>
+  </div>
+
 </section>
