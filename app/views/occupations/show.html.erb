@@ -25,7 +25,7 @@
         <%= render partial: 'skills_rating',locals: { o: @occupation } %>
       </div>
       <p class="text-sm text-stone-700">
-        This is based on the average proportion of green skills for this occupation. This is the % of skills out of all the skills associated with the occupation that are "green", meaning that they were found in the <%= link_to 'ESCO Green Skill list', 'https://ec.europa.eu/esco/portal/skill', class: 'link', target: '_blank', rel: 'noopener' %>.
+        This is based on the average proportion of green skills for this occupation. This is the % of skills out of all the skills associated with the occupation that are "green", meaning that they were found in the <%= link_to 'ESCO Green Skill list', 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>.
       </p>
     </div>
 
@@ -45,7 +45,7 @@
         <%= render partial: 'occupation_rating',locals: { o: @occupation } %>
       </div>
       <p class="text-sm text-stone-700">
-        This rating is based on % time spent on green tasks for this occupation, calculated using estimates of the fraction of overall time spent doing green tasks (using <%= link_to 'O*NET 2011  green task definitions', 'https://www.onetcenter.org/dl_files/GreenRef.pdf', class: 'link', target: '_blank', rel: 'noopener' %>).
+        This rating is based on % time spent on green tasks for this occupation, calculated using estimates of the fraction of overall time spent doing green tasks (<%= link_to 'found on the ONS based on task-level data from the O*NET database in the US', 'https://www.ons.gov.uk/economy/environmentalaccounts/articles/researchintogreenjobstimespentdoinggreentasksuk/1997to2019', class: 'link', target: '_blank', rel: 'noopener' %>).
       </p>
     </div>
   </aside>
