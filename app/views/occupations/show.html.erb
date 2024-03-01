@@ -113,11 +113,16 @@
       <%= render 'card', o: o %>
     <% end %>
 
-    <p class="my-8">
-      <strong>Download results:</strong>
-      <%= link_to 'JSON', occupation_path(@occupation, format: :json), download: 'green_jobs_data.json', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
-      <%= link_to 'CSV', occupation_path(@occupation, format: :csv), download: 'green_jobs_data.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
-    </p>
+    <div class="my-8 flex gap-2">
+      <div class="flex flex-col">
+        <strong>Download results:</strong>
+        <a href="https://docs.google.com/document/d/1dhKQbhjFHRk7-YCmm4x3uPjto7fu2bcakOW7wVMWUsM/edit" target="_blank" rel="noopener noreferrer" class="text-sm">More details</a>
+      </div>
+      <div>
+        <%= link_to 'JSON', occupation_path(@occupation, format: :json), download: 'green_jobs_data.json', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
+        <%= link_to 'CSV', occupation_path(@occupation, format: :csv), download: 'green_jobs_data.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
+      </div>
+    </div>
 
     <div class="my-8 p-4 bg-slate-200">
       <h3 class="text-lg font-bold mb-2">
