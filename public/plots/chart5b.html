@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"title": {"font": "Century Gothic", "anchor": "start"}, "axis": {"labelFont": "Century Gothic", "titleFont": "Century Gothic", "gridColor": "grey", "gridDash": [1, 7], "labelFontSize": 16, "titleFontSize": 16}, "header": {"labelFont": "Century Gothic", "titleFont": "Century Gothic"}, "legend": {"labelFont": "Century Gothic", "titleFont": "Century Gothic", "labelFontSize": 16, "titleFontSize": 18}, "range": {"category": ["#FDB633", "#18A48C", "#9A1BBE", "#EB003B", "#FF6E47", "#646363", "#0F294A", "#97D9E3", "#A59BEE", "#F6A4B7", "#D2C9C0", "#000000"], "ordinal": {"scheme": ["#FDB633", "#18A48C", "#9A1BBE", "#EB003B", "#FF6E47", "#646363", "#0F294A", "#97D9E3", "#A59BEE", "#F6A4B7", "#D2C9C0", "#000000"]}}, "autosize": "fit-x", "view": {"strokeWidth": 0}}, "data": {"name": "data-5cae6f58079e2df2eb25e864b7b3f903"}, "mark": {"type": "bar"}, "encoding": {"color": {"value": "#86efad"}, "tooltip": [{"field": "skill_name", "title": "Skill", "type": "nominal"}, {"field": "description", "title": "Skill description", "type": "nominal"}, {"field": "num_job_ads", "title": "Number of jobs adverts this skill appears in", "type": "quantitative"}, {"field": "prop_job_ads_1", "format": ".2%", "title": "% of jobs adverts this skill appears in", "type": "quantitative"}], "x": {"field": "perc_job_ads_1", "title": "Percentage of all job adverts (%)", "type": "quantitative"}, "y": {"axis": {"labelLimit": 500}, "field": "skill_name_wrapped", "sort": "-x", "title": "", "type": "nominal"}}, "height": 400, "title": {"anchor": "start", "text": "Most common green skills", "fontSize": 18, "subtitle": "", "subtitleFont": "Century Gothic", "subtitleFontSize": 13}, "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-5cae6f58079e2df2eb25e864b7b3f903": [{"skill_id": "f2f463e5-2382-49cb-8199-e7e043d868df", "skill_name": "health and safety regulations", "skill_name_wrapped": ["health and safety regulations"], "num_job_ads": 158313, "prop_job_ads_1": 0.034696823320662616, "perc_job_ads_1": 3.4696823320662618, "description": "Necessary health, safety, hygiene and environmental standards and legislation rules in the sector of particular activity."}, {"skill_id": "f6d7ba88-5234-4994-944d-843ca453c923", "skill_name": "implement environmental protection measures", "skill_name_wrapped": ["implement environmental protection measures"], "num_job_ads": 19510, "prop_job_ads_1": 0.004275928211745893, "perc_job_ads_1": 0.42759282117458935, "description": "Enforce environmental criteria to prevent environmental damage. Strive for the efficient use of resources in order to prevent waste and reduce costs. Motivate colleagues to take relevant steps to operate in an environmentally friendly manner."}, {"skill_id": "82fea746-853f-4f1b-8ab7-55de8619cccd", "skill_name": "lean manufacturing", "skill_name_wrapped": ["lean manufacturing"], "num_job_ads": 18556, "prop_job_ads_1": 0.004066843869664624, "perc_job_ads_1": 0.40668438696646236, "description": "Lean manufacturing is a methodology that focuses on minimizing waste within manufacturing systems while simultaneously maximizing productivity."}, {"skill_id": "a28c96cd-a43d-4143-b992-903356d0923e", "skill_name": "manage habitats", "skill_name_wrapped": ["manage habitats"], "num_job_ads": 14073, "prop_job_ads_1": 0.0030843227946642728, "perc_job_ads_1": 0.30843227946642726, "description": "Create and manage natural habitats."}, {"skill_id": "cab07957-4f35-4bdd-9d6d-dc5a0cf42e13", "skill_name": "safety engineering", "skill_name_wrapped": ["safety engineering"], "num_job_ads": 13655, "prop_job_ads_1": 0.0029927114162680768, "perc_job_ads_1": 0.2992711416268077, "description": "The engineering discipline used to ensure that systems, machines and equipment work according to the set safety standards and laws, such as environmental law."}, {"skill_id": "b251544f-7b92-46d5-8e14-97f59ce1c7dc", "skill_name": "promote innovative infrastructure design", "skill_name_wrapped": ["promote innovative infrastructure design"], "num_job_ads": 11582, "prop_job_ads_1": 0.0025383803458965118, "perc_job_ads_1": 0.25383803458965115, "description": "Throughout the coordination of an engineering project, promote the development of infrastructure that is innovative and sustainable, in line with the latest developments in the field."}, {"skill_id": "089ee650-297e-4716-87d1-440743b70a0d", "skill_name": "ensure compliance with environmental legislation", "skill_name_wrapped": ["ensure compliance with environmental legislation"], "num_job_ads": 11402, "prop_job_ads_1": 0.0024989304700321208, "perc_job_ads_1": 0.2498930470032121, "description": "Monitor activities and perform tasks ensuring compliance with standards involving environmental protection and sustainability, and amend activities in the case of changes in environmental legislation. Ensure that the processes are compliant with environment regulations and best practices."}, {"skill_id": "7f321b88-3d16-4e30-8163-5494ca8ce978", "skill_name": "engage others in environment friendly behaviours", "skill_name_wrapped": ["engage others in environment friendly behaviours"], "num_job_ads": 10999, "prop_job_ads_1": 0.0024106065812912907, "perc_job_ads_1": 0.24106065812912908, "description": "Inform about and promote environmental friendly behaviours in social networks and at work."}, {"skill_id": "4fb7f781-9362-426a-9eb6-65c360f83e31", "skill_name": "perform cleaning activities in an environmentally friendly way", "skill_name_wrapped": ["perform cleaning activities in an environmentally", "friendly way"], "num_job_ads": 9321, "prop_job_ads_1": 0.0020428460718443604, "perc_job_ads_1": 0.20428460718443606, "description": "Undertake all cleaning duties in a manner which minimises environmental damage, follow methods that lessen pollution and wastage of resources."}, {"skill_id": "96d901a6-c931-4e8d-b685-a47e1deaaa1b", "skill_name": "identify energy needs", "skill_name_wrapped": ["identify energy needs"], "num_job_ads": 7128, "prop_job_ads_1": 0.0015622150842298684, "perc_job_ads_1": 0.15622150842298682, "description": "Identify the type and amount of energy supply necessary in a building or facility, in order to provide the most beneficial, sustainable, and cost-effective energy services for a consumer."}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
