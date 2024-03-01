@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Averta";
+  font-weight: 400;
+  src: url("Averta-Regular.otf");
+}
+
+@font-face {
+  font-family: "Averta";
+  font-weight: 600;
+  src: url("Averta-Semibold.otf");
+}
+
+@font-face {
+  font-family: "Averta";
+  font-weight: 700;
+  src: url("Averta-Bold.otf");
+}
+
 @layer components {
   a {
     @apply underline hover:no-underline;
