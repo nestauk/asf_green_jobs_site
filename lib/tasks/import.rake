@@ -16,7 +16,6 @@ namespace :import do
       occ.green_overall_rating = row["greenness_score"] || "unknown"
       occ.green_skills_rating = row["skills_greenness"] || "unknown"
       occ.green_timeshare = row["occ_timeshare"] || 0
-      occ.green_topics_count = row["occ_topics"]
       occ.num_job_ads = row["num_job_ads"]
       occ.prop_green_skills = row["average_prop_green_skills"]
       occ.top_green_skills = JSON.parse(row["top_5_green_skills"])

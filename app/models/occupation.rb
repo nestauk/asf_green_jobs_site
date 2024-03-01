@@ -8,8 +8,7 @@ class Occupation < ApplicationRecord
 
   validates :avg_num_skills, :green_industry_rating, :green_occupation_rating,
             :green_overall_rating, :green_skills_rating, :green_timeshare,
-            :green_topics_count, :name, :num_job_ads, :prop_green_skills,
-            :description, presence: true
+            :name, :num_job_ads, :prop_green_skills, :description, presence: true
 
   def self.ransackable_attributes(auth_object = nil)
     ["name", "green_industry_rating", "green_occupation_rating", "green_overall_rating", "green_skills_rating"]

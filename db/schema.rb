@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_10_140150) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_10_140150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,7 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_140150) do
     t.decimal "avg_num_skills"
     t.decimal "prop_green_skills"
     t.decimal "green_timeshare"
-    t.integer "green_topics_count"
     t.jsonb "green_topics_list", default: []
     t.jsonb "top_green_skills", default: []
     t.jsonb "top_not_green_skills", default: []
