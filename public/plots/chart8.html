@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"title": {"font": "Century Gothic", "anchor": "start"}, "axis": {"labelFont": "Century Gothic", "titleFont": "Century Gothic", "gridColor": "grey", "gridDash": [1, 7], "labelFontSize": 14, "titleFontSize": 14}, "header": {"labelFont": "Century Gothic", "titleFont": "Century Gothic"}, "legend": {"labelFont": "Century Gothic", "titleFont": "Century Gothic", "labelFontSize": 14, "titleFontSize": 18}, "range": {"category": ["#FDB633", "#18A48C", "#9A1BBE", "#EB003B", "#FF6E47", "#646363", "#0F294A", "#97D9E3", "#A59BEE", "#F6A4B7", "#D2C9C0", "#000000"], "ordinal": {"scheme": ["#FDB633", "#18A48C", "#9A1BBE", "#EB003B", "#FF6E47", "#646363", "#0F294A", "#97D9E3", "#A59BEE", "#F6A4B7", "#D2C9C0", "#000000"]}}, "view": {"strokeWidth": 0}}, "data": {"name": "data-e8d95f6461bd294a908816696cc7d2a4"}, "mark": {"type": "bar"}, "encoding": {"color": {"value": "#FDB633"}, "tooltip": [{"field": "prop_in_green_occs", "format": ".2%", "title": "Percentage of jobs adverts in green occupations this skill appears in", "type": "quantitative"}, {"field": "num_in_green_occs", "title": "Number of jobs adverts in green occupations this skill appears in", "type": "quantitative"}, {"field": "prop_in_all_ads", "format": ".2%", "title": "Percentage of all jobs adverts this skill appears in", "type": "quantitative"}, {"field": "num_in_all_ads", "title": "Number of all jobs adverts this skill appears in", "type": "quantitative"}], "x": {"field": "degree centrality", "title": "Proportion of all skills this skill co-occurs with", "type": "quantitative"}, "y": {"axis": {"labelLimit": 500}, "field": "skill_name_wrapped", "sort": "-x", "title": "", "type": "nominal"}}, "height": 350, "title": {"anchor": "start", "text": "Most co-occurring non-green skills in green occupations", "fontSize": 18, "subtitle": "", "subtitleFont": "Century Gothic", "subtitleFontSize": 13}, "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-e8d95f6461bd294a908816696cc7d2a4": [{"index": 1123, "skill": "943d07ec-fb75-4bb5-bc07-20451a2b66e4", "degree centrality": 0.01311690441055911, "skill_name": "identify opportunities", "skill_name_wrapped": ["identify opportunities"], "skill_description": NaN, "prop_in_green_occs": 0.011570430847924454, "num_in_green_occs": 1882, "prop_in_all_ads": 0.00921066935042711, "num_in_all_ads": 42026}, {"index": 1389, "skill": "db77825e-0f3e-47d0-abdb-356794484272", "degree centrality": 0.01295294310542712, "skill_name": "use mathematical tools and equipment", "skill_name_wrapped": ["use mathematical tools and equipment"], "skill_description": NaN, "prop_in_green_occs": 0.0073406452882156204, "num_in_green_occs": 1194, "prop_in_all_ads": 0.009439916962394625, "num_in_all_ads": 43072}, {"index": 1109, "skill": "03b9b491-fc9b-4868-914a-bf7cd47b5041", "degree centrality": 0.012788981800295132, "skill_name": "create solutions to problems", "skill_name_wrapped": ["create solutions to problems"], "skill_description": NaN, "prop_in_green_occs": 0.01086341727326382, "num_in_green_occs": 1767, "prop_in_all_ads": 0.009142070399618476, "num_in_all_ads": 41713}, {"index": 1514, "skill": "a8d24a95-47b3-4f88-92e7-06600bcd3612", "degree centrality": 0.012625020495163142, "skill_name": "manage personal professional development", "skill_name_wrapped": ["manage personal professional development"], "skill_description": NaN, "prop_in_green_occs": 0.0046970293133976, "num_in_green_occs": 764, "prop_in_all_ads": 0.004222451713351942, "num_in_all_ads": 19266}, {"index": 2039, "skill": "S4.2.1", "degree centrality": 0.012461059190031154, "skill_name": "directing operational activities", "skill_name_wrapped": ["directing operational activities"], "skill_description": NaN, "prop_in_green_occs": 0.004592514263230376, "num_in_green_occs": 747, "prop_in_all_ads": 0.0019260306060903596, "num_in_all_ads": 8788}, {"index": 1540, "skill": "79c2a4b6-1323-4a4e-b1e6-bcdfe075fcfd", "degree centrality": 0.012133136579767176, "skill_name": "liaise with property owners", "skill_name_wrapped": ["liaise with property owners"], "skill_description": NaN, "prop_in_green_occs": 0.006486081054495376, "num_in_green_occs": 1055, "prop_in_all_ads": 0.004215219236110137, "num_in_all_ads": 19233}, {"index": 1564, "skill": "9af1bd12-01bd-4d6a-947b-69e64f23150a", "degree centrality": 0.011969175274635186, "skill_name": "process qualitative information", "skill_name_wrapped": ["process qualitative information"], "skill_description": NaN, "prop_in_green_occs": 0.004967538855006886, "num_in_green_occs": 808, "prop_in_all_ads": 0.004290393166229503, "num_in_all_ads": 19576}, {"index": 2263, "skill": "1be2bb07-dbb2-4a67-b133-30b4ff30b094", "degree centrality": 0.011805213969503198, "skill_name": "monitor billing procedures", "skill_name_wrapped": ["monitor billing procedures"], "skill_description": NaN, "prop_in_green_occs": 0.003860908912059807, "num_in_green_occs": 628, "prop_in_all_ads": 0.007367483483651971, "num_in_all_ads": 33616}, {"index": 1069, "skill": "4cc2ede9-6ad7-44fa-9709-3ec4d3116e48", "degree centrality": 0.011805213969503198, "skill_name": "meet the requirements of legal bodies", "skill_name_wrapped": ["meet the requirements of legal bodies"], "skill_description": NaN, "prop_in_green_occs": 0.007346793232343105, "num_in_green_occs": 1195, "prop_in_all_ads": 0.003633991065041449, "num_in_all_ads": 16581}, {"index": 2454, "skill": "97bcbb41-c42b-4777-ab26-1f8f7dcfafd8", "degree centrality": 0.011641252664371209, "skill_name": "negotiate improvement with suppliers", "skill_name_wrapped": ["negotiate improvement with suppliers"], "skill_description": NaN, "prop_in_green_occs": 0.0041560102301790285, "num_in_green_occs": 676, "prop_in_all_ads": 0.002352527597379827, "num_in_all_ads": 10734}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
