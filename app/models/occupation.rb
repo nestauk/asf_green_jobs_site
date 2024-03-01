@@ -20,14 +20,40 @@ class Occupation < ApplicationRecord
 
   def self.to_csv(iterable)
     CSV.generate do |csv|
-      filtered_columns = column_names.excluding("id", "created_at", "updated_at", "top_green_skills", "top_not_green_skills")
-      csv << filtered_columns + ["top_green_skills", "top_not_green_skills", "industries", "regions"]
-      iterable.each do |occupation|
-        top_green_skills = occupation.top_green_skills.to_json
-        top_not_green_skills = occupation.top_not_green_skills.to_json
-        industries = occupation.industries.select(:name, :sic_code, 'segments.count', 'segments.percentage').to_json
-        regions = occupation.regions.pluck(:name, 'locations.percentage').to_json
-        csv << occupation.attributes.values_at(*filtered_columns) + [top_green_skills, top_not_green_skills, industries, regions]
+      heading_row = %w[
+        name
+        occupation_description
+        num_job_ads
+        percentage_green_skills
+        time_on_green_tasks
+        industry_emissions
+        green_skills_rating
+        green_occupation_rating
+        green_industry_rating
+        most_common_green_skills
+        most_common_not_green_skills
+        median_min_annualised_salary
+        median_max_annualised_salary
+      ]
+      csv << heading_row
+
+      iterable.each do |o|
+        data_row = [
+          o.name,
+          o.description,
+          o.num_job_ads,
+          o.prop_green_skills,
+          o.green_timeshare,
+          o.average_ind_perunit_ghg,
+          o.green_skills_rating,
+          o.green_occupation_rating,
+          o.green_industry_rating,
+          o.top_green_skills,
+          o.top_not_green_skills,
+          o.median_min_annualised_salary,
+          o.median_max_annualised_salary
+        ]
+        csv << data_row
       end
     end
   end
