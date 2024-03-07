@@ -14,8 +14,15 @@ module.exports = {
       },
       colors: {
         brand: {
+          a11green: "#148572",
+          aqua: "#97d9e3",
+          blue: "#0000ff",
+          gray: "#646363",
           green: "#18a48c",
-          blue: "#0000FF",
+          navy: "#0f294a",
+          purple: "#9a1bbe",
+          sand: "#d2c9c0",
+          violet: "#a59bee",
         },
       },
     },
