@@ -12,6 +12,12 @@ module.exports = {
       fontFamily: {
         sans: ["Averta", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        brand: {
+          green: "#18a48c",
+          blue: "#0000FF",
+        },
+      },
     },
   },
   plugins: [

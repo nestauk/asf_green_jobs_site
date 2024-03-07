@@ -16,24 +16,36 @@
   </head>
 
   <body class="flex flex-col h-screen">
-    <header class="container max-w-screen-lg mx-auto px-4 pt-4 pb-2">
-      <nav class="flex items-end gap-3">
-        <strong><%= link_to 'Green Jobs Explorer', root_path, class: "text-lg" %></strong>
-        &middot;
-        <%= link_to 'Explore', occupations_path %>
-        &middot;
-        <%= link_to 'Compare', compare_path, data: { turbo: false } %>
-        &middot;
-        <%= link_to 'About', 'https://www.nesta.org.uk/project/measuring-green-jobs-and-skills/', target: '_blank', rel: 'noopener' %>
-      </nav>
+    <div class="container max-w-screen-lg mx-auto px-4 py-2">
+      <div class="text-sm">
+        <span class="text-brand-blue border border-brand-blue font-semibold px-2 py-0.5 rounded mr-1">Beta</span>
 
-      <div class="mt-4 pt-2 border-t border-stone-300 text-sm">
         This is a new service - <%= link_to 'provide feedback', 'mailto:info@nesta.org.uk?subject=Feedback - Green Jobs Tool' %> to help us improve it.
       </div>
+    </div>
+    <div class="bg-brand-green">
+      <header class="container max-w-screen-lg mx-auto px-4 py-3">
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </header>
+        <nav class="flex flex-wrap justify-between items-center gap-3 font-bold text-lg text-white">
+          <%= link_to root_path, class: 'flex gap-2 items-center no-underline leading-tight tracking-widest' do %>
+            <svg width="34px" height="34px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M17 17L21 21" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493C18.1077 15.2022 19 13.2053 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <strong>Green Jobs<br> Explorer</strong>
+          <% end %>
+
+          <div class="flex gap-8 sm:w-auto w-full">
+            <%= link_to 'Explore', occupations_path, class: 'no-underline hover:underline' %>
+            <%= link_to 'Compare', compare_path, class: 'no-underline hover:underline' %>
+            <%= link_to 'https://www.nesta.org.uk/project/measuring-green-jobs-and-skills/', target: '_blank', rel: 'noopener', class: 'no-underline hover:underline' do %>
+              About
+              <svg class="inline-block mb-1" width="18px" height="18px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><path d="M21 3L15 3M21 3L12 12M21 3V9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H11" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            <% end %>
+          </div>
+        </nav>
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </header>
+    </div>
 
     <main class="flex-1">
       <%= yield %>
