@@ -35,6 +35,13 @@
   background-size: cover;
 }
 
+.hero-img {
+  background: url(plant-in-hand.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .pagination span {
   margin: 0 0.125rem;
 }

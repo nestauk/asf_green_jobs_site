@@ -1,62 +1,210 @@
-<section class="bg-img h-96 flex items-center">
-  <div class="max-w-screen-lg mx-auto p-4">
-    <h1 class="text-3xl sm:text-5xl text-white font-bold w-full md:w-2/3 mb-3 sm:mb-8">
+<div class="max-w-screen-lg mx-auto px-4 flex flex-wrap">
+  <div class="w-full md:w-3/5 py-5 sm:py-8 md:pr-6">
+    <h1 class="text-3xl sm:text-5xl font-bold mb-3 sm:mb-8">
       Learn about green jobs and skills
     </h1>
-    <p class="text-xl text-stone-200 leading-relaxed mb-5 w-full md:w-2/3 mb-3 sm:mb-8">
-      Developing a way to measure and identify green jobs to help grow the sector.
+    <p class="text-xl text-brand-gray leading-relaxed mb-5 mb-3 sm:mb-8">
+      This tool provides new insights based on job advert data to help users working on green jobs to build a picture of the green job market and provide nuance on how green a job really is.
     </p>
 
-    <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-blue-700 hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+    <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-brand-blue hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
       <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M10.5857 10.5857L16.9496 7.0502L13.4141 13.4142L7.05012 16.9497L10.5857 10.5857Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       Explore green jobs
     <% end %>
 
-    <%= link_to compare_path, data: { turbo: false }, class: 'inline-flex felx gap-2 mb-4 bg-violet-700 hover:bg-violet-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+    <%= link_to compare_path, data: { turbo: false }, class: 'inline-flex felx gap-2 mb-4 bg-brand-purple hover:bg-purple-600 px-6 py-4 text-white font-bold text-lg no-underline' do %>
       <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M9 21H15M9 21V16M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.6C3 16.2686 3.26863 16 3.6 16H9M15 21V9M15 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H15.6C15.2686 3 15 3.26863 15 3.6V9M15 9H9.6C9.26863 9 9 9.26863 9 9.6V16" stroke="#FFFFFF" stroke-width="1.5"></path></svg>
       Compare green jobs
     <% end %>
   </div>
-</section>
+  <div class="w-2/5 hero-img"></div>
+</div>
 
-<div class="bg-stone-200 py-8">
+<div class="bg-brand-a11green text-white py-8">
   <section class="max-w-screen-md mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-2">What makes a green job?</h2>
-    <p class="text-lg mb-5">We've analysed over 8 million job adverts and counting since 2021 to measure how "green" they are. A jobs greenness is based on...</p>
+    <h2 class="text-3xl font-bold mb-3 text-center">Three shades of green</h2>
+
+    <p class="text-lg mb-1 text-center">
+      <em>Is a sustainability advisor in the petrochemical industry a 'green job'?</em>
+    </p>
+    <p class="text-lg mb-5 text-center">
+      Jobs can be <strong>green</strong> in some respects and <strong>not green</strong> in others.
+    </p>
+
+    <p class="text-lg mb-6">
+      We want to provide more information on the shades of green in all jobs.
+      To start, we are providing information on 3 metrics:
+    </p>
+
     <div class="flex gap-2 justify-between">
-      <div class="flex flex-col gap-2 items-center text-center text-green-900">
+      <div class="flex flex-col gap-2 items-center text-center text-green-900 bg-white sm:px-6 px-2 py-4 rounded-lg">
         <svg width="55px" height="55px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14532d"><path d="M10.0503 10.6066L2.97923 17.6777C2.19818 18.4587 2.19818 19.7251 2.97923 20.5061V20.5061C3.76027 21.2872 5.0266 21.2872 5.80765 20.5061L12.8787 13.4351" stroke="#14532d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.1927 13.7994L21.071 17.6777C21.8521 18.4587 21.8521 19.7251 21.071 20.5061V20.5061C20.29 21.2872 19.0236 21.2872 18.2426 20.5061L12.0341 14.2977" stroke="#14532d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.73267 5.90381L4.61135 6.61092L2.49003 3.07539L3.90424 1.66117L7.43978 3.78249L6.73267 5.90381ZM6.73267 5.90381L9.5629 8.73404" stroke="#14532d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10.0503 10.6066C9.2065 8.45359 9.37147 5.62861 11.111 3.8891C12.8505 2.14958 16.0607 1.76778 17.8285 2.82844L14.7878 5.86911L14.5052 8.98015L17.6162 8.69754L20.6569 5.65686C21.7176 7.42463 21.3358 10.6349 19.5963 12.3744C17.8567 14.1139 15.0318 14.2789 12.8788 13.435" stroke="#14532d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        % of green skills
+        &nbsp;% of green skills&nbsp;
       </div>
-      <div class="flex flex-col gap-2 items-center text-center text-purple-900">
+      <div class="flex flex-col gap-2 items-center text-center text-purple-900 bg-white sm:px-6 px-2 py-4 rounded-lg">
         <svg width="55px" height="55px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#581c87"><path d="M18 10C18 9 17 8 15 8C14.6978 8 14.355 8 14.0002 8C12.3434 8 11 6.65685 11 5V2" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 21H21V12H18V16.5M18 21V16.5M18 21L3 21V17L6.5 14L10.5 16.5L14.5 14L18 16.5" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 10C21 4 17 4 17 4C17 4 21 4.5 21 2" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         Industry emissions
       </div>
-      <div class="flex flex-col gap-2 items-center text-center text-blue-900">
+      <div class="flex flex-col gap-2 items-center text-center text-blue-900 bg-white sm:px-6 px-2 py-4 rounded-lg">
         <svg width="55px" height="55px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1e3a8a"><path d="M12 6L12 12L18 12" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        Time on green tasks
+        Time on green tasks&nbsp;
       </div>
     </div>
   </section>
 </div>
 
-<section class="max-w-prose mx-auto px-4 my-8">
-  <h2 class="text-xl font-bold mb-2">About this tool</h2>
-  <p class="mb-4">
-    At Nesta, we're measuring the greenness of every job advert to help facilitate the transition of the UK workforce to net zero. Central to this research is our ever-growing database of almost 8 million online job postings, collected since 2021.
-  </p>
-  <p class="mb-4">
-    To generate rich and novel data about green jobs, we extract information about skills, occupation and industry from job adverts. Once this information is extracted, we match it to existing datasets that tell us how green a given skill, occupation or industry is.
-  </p>
-  <p class="mb-4">
-    For example, a job advert may have a high proportion of skills that are found within validated green skill lists; the occupation the job advert is advertising for may have a high green timeshare (based on validated green task definitions); and the industry the role is advertised in may have low greenhouse gas emissions per employee.
-  </p>
-  <p class="mb-4">
-    To make the data on these measures for our millions of job adverts more digestible, this tool aggregates and averages the data per standardised occupation and region. This allows us to give each occupation three green ratings, depending on: the skills required for that occupation, whether the occupation itself is considered green, and the industry the occupation most commonly appears in. We also aggregate these measures to produce a measure of "overall greenness".
-  </p>
+<div class="max-w-screen-lg mx-auto p-4 flex flex-wrap items-center">
+  <div class="w-full md:w-1/2 md:pr-6 my-4">
+    <div class="border border-brand-sand rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4">Recruiting: Sustainability consultant</h3>
 
-  <h3 class="text-lg font-bold mb-2 text-gray-600">Good to know</h3>
-  <p class="text-gray-600">
-    The data you can explore here is produced from a random sample of 1 million job adverts collected since 2021. The data is also deduplicated where two job adverts are posted from the same location and have the same job description. Due to this, we are unable to make a comment about demand for a given occupation or provide information on the number of “green jobs”. Rather, the tool provides detailed information about the comparative greenness of occupations and regions, as well as giving information about the green skills commonly asked for per occupation.
-  </p>
+      <p class="leading-loose">
+        This role requires strong skills in
+        <span class="bg-green-300 py-0.5 px-1 rounded">sustainability reporting</span>
+        <span class="bg-green-300 py-0.5 px-1 rounded">knowledge of renewable technologies</span>
+        and . It also requires a sound understanding of
+        <span class="bg-green-300 py-0.5 px-1 rounded">data analysis</span>
+        and
+        <span class="bg-green-300 py-0.5 px-1 rounded">communication skills</span>.
+      </p>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 md:pl-6 my-4">
+    <div class="flex gap-2 items-center mb-4">
+      <span class="bg-brand-blue text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
+        1
+      </span>
+      <h2 class="text-3xl font-bold text-brand-blue">Green skills</h2>
+      <svg width="40px" height="40px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0000ff"><path d="M10.0503 10.6066L2.97923 17.6777C2.19818 18.4587 2.19818 19.7251 2.97923 20.5061V20.5061C3.76027 21.2872 5.0266 21.2872 5.80765 20.5061L12.8787 13.4351" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.1927 13.7994L21.071 17.6777C21.8521 18.4587 21.8521 19.7251 21.071 20.5061V20.5061C20.29 21.2872 19.0236 21.2872 18.2426 20.5061L12.0341 14.2977" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.73267 5.90381L4.61135 6.61092L2.49003 3.07539L3.90424 1.66117L7.43978 3.78249L6.73267 5.90381ZM6.73267 5.90381L9.5629 8.73404" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10.0503 10.6066C9.2065 8.45359 9.37147 5.62861 11.111 3.8891C12.8505 2.14958 16.0607 1.76778 17.8285 2.82844L14.7878 5.86911L14.5052 8.98015L17.6162 8.69754L20.6569 5.65686C21.7176 7.42463 21.3358 10.6349 19.5963 12.3744C17.8567 14.1139 15.0318 14.2789 12.8788 13.435" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+
+    <p class="mb-3">
+      We extracted the <span class="bg-green-300 py-0.5 px-1 rounded">skills</span> mentioned in millions of job adverts and identified which were green.
+    </p>
+
+    <p>
+      To standardise the skills, we used machine learning to find skills that had similar meanings to the green skills and topics contained in European and US taxonomies.
+    </p>
+  </div>
+</div>
+
+<div class="max-w-screen-lg mx-auto p-4 flex flex-wrap items-center">
+  <div class="w-full md:w-1/2 md:pr-6 my-4">
+    <div class="flex gap-2 items-center mb-4">
+      <span class="bg-brand-blue text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
+        2
+      </span>
+      <h2 class="text-3xl font-bold text-brand-blue">Industry emissions</h2>
+      <svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0000ff"><path d="M18 10C18 9 17 8 15 8C14.6978 8 14.355 8 14.0002 8C12.3434 8 11 6.65685 11 5V2" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 21H21V12H18V16.5M18 21V16.5M18 21L3 21V17L6.5 14L10.5 16.5L14.5 14L18 16.5" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 10C21 4 17 4 17 4C17 4 21 4.5 21 2" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+
+    <p>
+      The
+      <span class="bg-purple-300 py-0.5 px-1 rounded">description of the firm in each advert</span>
+      was used to infer the broader industry. That allowed us to determine the mix of industries that each occupation was spread across. We then used a
+      <a href="https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current" target="_blank" rel="noopener noreferrer">dataset available from the ONS</a>
+      to provide the weighted average of CO2 emissions (per unit of economic output) for those industries.
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 md:pl-6 my-4">
+    <div class="border border-brand-sand rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4">Recruiting: Sustainability consultant</h3>
+
+      <p class="leading-loose">
+        We are an organisation that is part of the
+        <span class="bg-purple-300 py-0.5 px-1 rounded">architectural sector</span>
+        and our focus is on the built environment.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-screen-lg mx-auto p-4 flex flex-wrap items-center">
+  <div class="w-full md:w-1/2 md:pr-6 my-4">
+    <div class="border border-brand-sand rounded-lg p-6">
+      <p class="mb-3">
+        <em>
+          Biological scientists and biochemists are estimated to have spent
+          <span class="bg-blue-300 py-0.5 px-1 rounded">15.6% of their time</span>
+          on green tasks in 2019
+        </em>
+      </p>
+
+      <p>The time estimates are based on:</p>
+      <ul class="list-disc">
+        <li class="ml-6"><strong>How relevant</strong> are green tasks to your job?</li>
+        <li class="ml-6"><strong>How frequently</strong> do you perform these tasks?</li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 md:pl-6 my-4">
+    <div class="flex gap-2 items-center mb-4">
+      <span class="bg-brand-blue text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
+        3
+      </span>
+      <h2 class="text-3xl font-bold text-brand-blue">Time on green tasks</h2>
+      <svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0000ff"><path d="M12 6L12 12L18 12" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+
+    <p class="mb-3">
+      <a href="https://www.ons.gov.uk/economy/environmentalaccounts/articles/developingamethodformeasuringtimespentongreentasks/march2022" target="_blank" rel="noopener noreferrer">An ONS study</a>
+      estimated the
+      <span class="bg-blue-300 py-0.5 px-1 rounded">time that workers spent on green tasks</span>
+      using information on jobs from the US.
+    </p>
+
+    <p>
+      The estimates are for 2019. These are only available for broad occupation groups.
+    </p>
+  </div>
+</div>
+
+<div class="bg-brand-a11green py-8">
+  <section class="max-w-screen-lg mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-3 text-center text-white mb-8">The occupational picture</h2>
+
+    <div class="flex flex-wrap items-center">
+      <div class="w-full md:w-2/3 md:pr-4">
+        <%= render 'occupations/card', o: Occupation.all.sample %>
+      </div>
+      <div class="w-full md:w-1/3 md:pl-4 text-lg text-white">
+        <p>The three metrics are provided for over <strong>1,000 occupations</strong>, along with information on the most commonly requested green skills and advertised salaries.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="max-w-screen-lg mx-auto px-4 my-8 text-center">
+  <h2 class="text-3xl font-bold mb-3 mb-3">The bigger picture</h2>
+  <p class="text-lg mb-1">The <strong>locations</strong> of job adverts allow us to explore the green shades across regions.</p>
+  <p class="text-lg"><em>Which region has the highest proportion of green skills in their job adverts?</em></p>
+
+  <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>
 </section>
+
+<div class="bg-brand-sand py-8">
+  <section class="max-w-screen-lg mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-3 text-center mb-8">Methodological articles</h2>
+
+    <div class="grid sm:grid-cols-3 grid-cols-1 auto-rows-max gap-8 text-lg">
+      <div>
+        <a href="https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-2-occupation-99a1dc12bdef" target="_blank" rel="noopener noreferrer">
+          <%= image_tag 'article-1.jpg', class: 'mb-2', alt: 'Women holding a jar of grains next to a shelving unit' %>
+          Assigning job adverts to occupations
+        </a>
+      </div>
+      <div>
+        <a href="#coming-soon" target="_blank" rel="noopener noreferrer">
+          <%= image_tag 'article-2.jpg', class: 'mb-2', alt: 'Man walking with crate full of plants in hand' %>
+          Extracting green skills from job adverts (coming soon)
+        </a>
+      </div>
+      <div>
+        <a href="https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-1-industry-cf75997f2f78" target="_blank" rel="noopener noreferrer">
+          <%= image_tag 'article-3.jpg', class: 'mb-2', alt: 'Clost up of a man watering young plants' %>
+          Assigning job adverts to industries
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
