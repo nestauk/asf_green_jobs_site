@@ -102,17 +102,6 @@
       </div>
     <% end %>
 
-    <h2 class="mt-6 mb-1 font-bold text-xl">Similar occupations</h2>
-    <p class="my-2">Since we extract skills information from each job advert, we can build a picture of the commonly asked for skills for each occupation. This allows us to compare these skill profiles across occupations and therefore show the most similar occupations based on skills asked for.</p>
-    <p class="text-sm mb-3 text-stone-700">
-      Please note the following occupations are examples only and not necessarily similar ones. If you would find this feature useful then please
-      <%= link_to 'let us know', 'mailto:info@nesta.org.uk?subject=Feature Request - Green Jobs Tool' %>.
-    </p>
-
-    <%- Occupation.all.sample(3).each do |o| %>
-      <%= render 'card', o: o %>
-    <% end %>
-
     <div class="my-8 flex gap-2">
       <div class="flex flex-col">
         <strong>Download results:</strong>
