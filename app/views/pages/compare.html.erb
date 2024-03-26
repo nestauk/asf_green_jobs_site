@@ -16,16 +16,32 @@
 
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      Explore the full distribution of the fraction of time spent doing green tasks, the average proportion of green skills, and the average GHG emissions for each occupation. Highlight a specific occupation from the drop down box.
+      <p class="mb-4">
+        Most occupations engage minimally in green tasks, typically between 0% and 1% of time.
+      </p>
+      <p class="mb-4">
+        Occupations with a higher average proportion of green skills, exceeding the typical range of 0% to 3%, are uncommon; for example, even environmental consultants have at most 22% green skills.
+      </p>
+      <p>
+        The majority of occupations are in industries that generate on average between 0.1 and 0.3 GHG emissions relative to economic output, but there are some occupations, such as airport managers (2.92) or importers and exporters (2.46), that have very high emission intensities.
+      </p>
     </div>
     <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart1.html" frameborder="0" height="630px" width="100%" class="overflow-hidden"></iframe>
+      <iframe src="/plots/chart1.html" frameborder="0" height="680px" width="100%" class="overflow-hidden"></iframe>
     </div>
   </div>
 
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      We can explore how these values correlate with one another, allowing us to see the outliers and nuance in our dataset. In the following plot you can explore the occupations with the highest proportions of green skills but in the highest polluting industries (top right), and the least proportion of green skills but in the least polluting industries (bottom left).
+      <p class="mb-4">
+        Each point in this chart represents an occupation.
+      </p>
+      <p class="mb-4">
+        As the average GHG emissions increase for an occupation, there's no consistent increase in green skills or time spent on green tasks, indicated by varying colours mostly trending towards brown. High green skill occupations (as you move up the vertical axis) are rare and display varied emissions levels, but generally involve more green tasks, highlighted by greener colours. However, these occupations, such as energy managers and ecologists, are exceptions rather than the rule.
+      </p>
+      <p>
+        The graph suggests that there is not a straightforward relationship between an occupation's green skills and its environmental impact as measured by average GHG emissions per economic output.
+      </p>
     </div>
     <div class="w-full md:w-8/12">
       <iframe src="/plots/chart2.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe>
@@ -34,7 +50,15 @@
 
   <div class="flex flex-wrap overflow-hidden">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      In the next plot we dig into industries, where each point represents an industry rather than occupation. In this, we can explore how the average time spent on green tasks compares to the average proportion of green skills.
+      <p class="mb-4">
+        Each point in this chart represents an industry. The chart illustrates the nuanced link between industries' environmental initiatives and their GHG emissions.
+      </p>
+      <p class="mb-4">
+        Industries in the bottom left, with lower green skills and time spent on them, typically emit less GHG. Examples of these industries include social workers, barristers and bookkeepers. More time spent on green tasks (moving right) paradoxically correlates with higher emissions, as shown by the colour change from green to brown. This area of the chart is where many manufacturing industry occupations can be found.
+      </p>
+      <p>
+        There's no clear correlation between the level of green skills (vertical axis) and GHG emissions.
+      </p>
     </div>
     <div class="w-full md:w-8/12">
       <iframe src="/plots/chart3.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe>
@@ -47,7 +71,7 @@
   <h2 class="text-3xl font-bold mb-8">The regional picture</h2>
 
   <div class="w-full mb-4 pr-0 md:pr-8">
-      Our job adverts come from all over the UK, so by averaging our green measures for each region we can compare greenness regionally. In the following plots you can select a type of measure to compare (average proportion of green skills, average time spent on green tasks or average GHG emissions). You can also change the maps to break down the UK into different granularities - we use <%= link_to 'ITL regions', 'https://www.ons.gov.uk/methodology/geography/ukgeographies/eurostat', class: 'link', target: '_blank', rel: 'noopener' %> for this.
+    The map reveals a varied picture across regions of the UK. For instance, the East Midlands is the region with the highest portion of time spent on green tasks but it scores highest for GHG emissions. A closer examination of individual areas within regions reveals significant local variations.
   </div>
   <div class="w-full">
     <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>

@@ -4,7 +4,7 @@
       Learn about green jobs and skills
     </h1>
     <p class="text-xl text-brand-gray leading-relaxed mb-5 mb-3 sm:mb-8">
-      This tool provides new insights based on job advert data to help users working on green jobs to build a picture of the green job market and provide nuance on how green a job really is.
+      This tool harnesses job advert data to offer new insights on the green labour market. You can explore and compare the environmental aspects of different occupations to build a more nuanced picture of green jobs in the UK.
     </p>
 
     <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-brand-blue hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
@@ -43,7 +43,7 @@
       </div>
       <div class="flex flex-col gap-2 items-center text-center text-purple-900 bg-white sm:px-6 px-2 py-4 rounded-lg">
         <svg width="55px" height="55px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#581c87"><path d="M18 10C18 9 17 8 15 8C14.6978 8 14.355 8 14.0002 8C12.3434 8 11 6.65685 11 5V2" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 21H21V12H18V16.5M18 21V16.5M18 21L3 21V17L6.5 14L10.5 16.5L14.5 14L18 16.5" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 10C21 4 17 4 17 4C17 4 21 4.5 21 2" stroke="#581c87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        Industry emissions
+        Industry greenness
       </div>
       <div class="flex flex-col gap-2 items-center text-center text-blue-900 bg-white sm:px-6 px-2 py-4 rounded-lg">
         <svg width="55px" height="55px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1e3a8a"><path d="M12 6L12 12L18 12" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1e3a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -94,7 +94,7 @@
       <span class="bg-brand-blue text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
         2
       </span>
-      <h2 class="text-3xl font-bold text-brand-blue">Industry emissions</h2>
+      <h2 class="text-3xl font-bold text-brand-blue">Industry greenness</h2>
       <svg width="40px" height="40px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0000ff"><path d="M18 10C18 9 17 8 15 8C14.6978 8 14.355 8 14.0002 8C12.3434 8 11 6.65685 11 5V2" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 21H21V12H18V16.5M18 21V16.5M18 21L3 21V17L6.5 14L10.5 16.5L14.5 14L18 16.5" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 10C21 4 17 4 17 4C17 4 21 4.5 21 2" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
     </div>
 
@@ -186,7 +186,7 @@
   <section class="max-w-screen-lg mx-auto px-4">
     <h2 class="text-3xl font-bold mb-3 text-center mb-8">Methodological articles</h2>
 
-    <div class="grid sm:grid-cols-3 grid-cols-1 auto-rows-max gap-8 text-lg">
+    <div class="grid sm:grid-cols-3 grid-cols-1 auto-rows-max gap-8 text-lg font-bold">
       <div>
         <a href="https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-2-occupation-99a1dc12bdef" target="_blank" rel="noopener noreferrer">
           <%= image_tag 'article-1.jpg', class: 'mb-2', alt: 'Women holding a jar of grains next to a shelving unit' %>

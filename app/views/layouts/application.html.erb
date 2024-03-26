@@ -15,7 +15,20 @@
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSMHNJ2LL4" data-turbo-track= "reload"></script>
+  <%= javascript_include_tag 'google-analytics' %>
+
   <body class="flex flex-col h-screen">
+    <div class="bg-brand-sand fixed bottom-0 w-full">
+      <div id="cookie-consent-banner" class="container max-w-screen-lg mx-auto px-4 py-2 text-center">
+        Allow this site to use analytics cookies -
+        <a href="#accept-analytics" id="accept-analytics">Accept</a>
+        or
+        <a href="#reject-analytics" id="reject-analytics">Reject</a>
+      </div>
+    </div>
+
     <div class="container max-w-screen-lg mx-auto px-4 py-2">
       <div class="text-sm">
         <span class="text-brand-blue border border-brand-blue font-semibold px-2 py-0.5 rounded mr-1">Beta</span>
@@ -51,21 +64,37 @@
       <%= yield %>
     </main>
 
-    <footer class="text-sm text-stone-700 container max-w-screen-lg mx-auto px-4 py-6 border-t border-stone-300">
-      <p class="mb-2">
-        Developed by
-        <%= link_to 'Nesta', 'https://www.nesta.org.uk/', taget: '_blank', rel: 'noopener' %>
-        as part of our work on measuring green jobs and skills.
-      </p>
-
-      <div class="flex gap-3">
-        <%= link_to 'Methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/blob/dev/dap_prinz_green_jobs/pipeline/green_measures/README.md', target: '_blank', rel: 'noopener' %>
-        &middot;
-        <%= link_to 'Datasets used', sources_path %>
-        &middot;
-        <%= link_to 'Source code', 'https://github.com/nestauk/asf_green_jobs_site', target: '_blank', rel: 'noopener' %>
+    <footer class="bg-brand-a11green text-white">
+      <div class="container max-w-screen-lg mx-auto p-4 flex flex-wrap">
+        <div class="w-full md:w-1/2 pr-0 md:pr-3 mb-5 md:mb-0 flex flex-col justify-end">
+          Generously funded by ESRC as part of the
+          <a href="https://www.prinzproject.io/" target="_blank" rel="noopener noreferrer">Productive and Inclusive Net Zero Research Project</a>
+        </div>
+        <div class="w-full md:w-1/2 pl-0 md:pl-3">
+          <div class="flex">
+            <div class="w-1/2 pr-5">
+              <p class="mb-4">
+                A website developed by
+              </p>
+              <%= image_tag 'nesta-logo-white.png', width: 180, alt: 'Nesta Logo in white' %>
+            </div>
+            <div class="w-1/2 flex flex-col gap-2 pl-5 border-l border-white">
+              <p>
+                <%= link_to 'About', 'https://www.nesta.org.uk/project/measuring-green-jobs-and-skills/', target: '_blank', rel: 'noopener', class: 'no-underline hover:underline' %>
+              </p>
+              <p>
+                <%= link_to 'Methodology', 'https://github.com/nestauk/dap_prinz_green_jobs/blob/dev/dap_prinz_green_jobs/pipeline/green_measures/README.md', target: '_blank', rel: 'noopener', class: 'no-underline hover:underline' %>
+              </p>
+              <p>
+                <%= link_to 'Datasets used', sources_path, class: 'no-underline hover:underline' %>
+              </p>
+              <p>
+                <%= link_to 'Source code', 'https://github.com/nestauk/asf_green_jobs_site', target: '_blank', rel: 'noopener', class: 'no-underline hover:underline' %>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
     </footer>
   </body>
 </html>

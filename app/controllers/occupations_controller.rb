@@ -6,7 +6,7 @@ class OccupationsController < ApplicationController
   def index
     @q = Occupation.ransack(params[:q])
     @occupations = @q.result(distinct: true)
-                     .order(green_timeshare: :desc, prop_green_skills: :desc)
+                     .order(prop_green_skills: :desc, green_timeshare: :desc)
 
     respond_to do |format|
       format.html { @occupations = @occupations.page(params[:page]) }
