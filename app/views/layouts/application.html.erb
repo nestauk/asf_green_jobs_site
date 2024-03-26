@@ -15,7 +15,20 @@
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSMHNJ2LL4" data-turbo-track= "reload"></script>
+  <%= javascript_include_tag 'google-analytics' %>
+
   <body class="flex flex-col h-screen">
+    <div class="bg-brand-sand fixed bottom-0 w-full">
+      <div id="cookie-consent-banner" class="container max-w-screen-lg mx-auto px-4 py-2 text-center">
+        Allow this site to use analytics cookies -
+        <a href="#accept-analytics" id="accept-analytics">Accept</a>
+        or
+        <a href="#reject-analytics" id="reject-analytics">Reject</a>
+      </div>
+    </div>
+
     <div class="container max-w-screen-lg mx-auto px-4 py-2">
       <div class="text-sm">
         <span class="text-brand-blue border border-brand-blue font-semibold px-2 py-0.5 rounded mr-1">Beta</span>
@@ -51,7 +64,7 @@
       <%= yield %>
     </main>
 
-    <footer class="bg-brand-green text-white">
+    <footer class="bg-brand-a11green text-white">
       <div class="container max-w-screen-lg mx-auto p-4 flex flex-wrap">
         <div class="w-full md:w-1/2 pr-0 md:pr-3 mb-5 md:mb-0 flex flex-col justify-end">
           Generously funded by ESRC as part of the
