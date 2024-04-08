@@ -1,46 +1,64 @@
 <section class="container max-w-screen-lg mx-auto p-4">
   <h1 class="text-3xl font-bold my-5">Datasets used</h1>
 
+  <h2 class="text-xl font-bold my-3">Job adverts</h2>
+    <p class="mb-4">
+    The Green Jobs Explorer is powered by just under four million UK job adverts from <%= link_to "Nesta’s Open Jobs Observatory", 'https://www.nesta.org.uk/data-visualisation-and-interactive/open-jobs-observatory/', class: 'link', target: '_blank', rel: 'noopener' %>. These job adverts are grouped by occupation using the 2020 Extended Standard Occupational Classifications (see below). We remove any occupations with under 50 job adverts, leaving us with a total of 1059 occupations. The number of job adverts per occupation had a median value of 772 (with an interquartile range of 215-2,987).
+    </p>
+
+    <p class="mb-4">
+    We assign regions to each job advert using the <%= link_to "International Territorial Levels (ITL)", 'https://www.ons.gov.uk/methodology/geography/ukgeographies/eurostat#international-territorial-levels-itls-', class: 'link', target: '_blank', rel: 'noopener' %> standard classifications. Job adverts are assigned to one of 12 ITL 1 regions (the least granular), one of 37 ITL 2 regions and one of 159 ITL 3 regions (the most granular). When grouped by region, 100% of ITL 1 and 2 regions have over 1,000 job adverts, and 100% of ITL 3 regions have over 100 job adverts (92% have over 1,000 job adverts).
+    </p>
+
   <h2 class="text-xl font-bold my-3">Green skills</h2>
-  <ul class="list-disc">
-    <li class="ml-5 mb-1">
-      We use the ESCO Green Skills list, which is itself based on a definition from the European Centre for the Development of Vocational Training. The list can be found on <%= link_to "ESCO's website", 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-  </ul>
+    
+    <p class="mb-4">
+    Two sources helped us find green skills in job adverts. First, the European Commission’s European Classification of Occupations, Skills and Competences (ESCO) developed a skills taxonomy for the green transition, adding ‘green’ labels to <%= link_to "their full taxonomy of skills and knowledge concepts", 'https://esco.ec.europa.eu/en/about-esco/what-esco', class: 'link', target: '_blank', rel: 'noopener' %>. Their green skills list can be found on their website <%= link_to "here", 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>. Second, we also use the US’s Occupational Information Network’s (<%= link_to "O*NET", 'https://www.onetcenter.org/overview.html', class: 'link', target: '_blank', rel: 'noopener' %>) expertly curated list of <%= link_to "72 green topics", 'https://www.onetcenter.org/reports/Green_Topics.html', class: 'link', target: '_blank', rel: 'noopener' %>.
+    </p>
+    <p class="mb-4">
+    To calculate the <span class="bg-green-300 py-0.5 px-1 rounded">percentage of green skills</span> for each of our job adverts we identified what proportion of the skills were green based on the green ESCO taxonomy and the O*NET green topics. When reporting on the most common green and non-green skills we use ESCO taxonomy preferred skill names. You can find out more about this process by reading our <%= link_to "methodological blog", 'https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-3-skills-2015fa18b18f', class: 'link', target: '_blank', rel: 'noopener' %>.
+    </p>
+
+    <div class="w-full md:w-2/2 md:pr-6 my-4">
+    <div class="border border-brand-sand rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4">A note on health and safety skills</h3>
+
+      <p class="mb-4">
+        “Health and safety regulations” is an ESCO green skill defined as “Necessary health, safety, hygiene and environmental standards and legislation rules in the sector of particular activity”. However, we feel that not all aspects of this skill are green (e.g., making sure fire exits are clear).
+      </p>
+      <p class="mb-4">
+         This skill appears in 3.5% of job adverts, whereas the second most common green skill occurs in 0.4% of job adverts. Therefore, since this skill is by far the most common green skill and appears very prominently across this tool, we decided to remove it from our most common green skills lists within the Green Jobs Explorer tool. However, since it is a green skill by ESCO’s definition, we still include it when calculating the percentage of green skills. Since our results are averaged over many job adverts and include many skills, including this skill vs not makes a difference of 0.4% on average to the percentage of green skills. The occupation affected the most by this skill are Lifeguards which have a high percentage of green skills due to many of these job adverts asking for health and safety skills.
+      </p>
+    </div>
+  </div>
+
+
+
 
   <h2 class="text-xl font-bold my-3">Industries</h2>
-  <ul class="list-disc">
-    <li class="ml-5 mb-1">
-      We use the <%= link_to 'Standard Industrial Classification of economic activities (SIC)', 'https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007', class: 'link', target: '_blank', rel: 'noopener' %>, which is published by the UK government.
-    </li>
-    <li class="ml-5 mb-1">
-      The total greenhouse gas emissions by 2 digit SIC from the ONS website <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsbyeconomicsectorandgasunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-    <li class="ml-5 mb-1">
-      The greenhouse gas emissions per unit of economic output by SIC from the ONS website <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-    <li class="ml-5 mb-1">
-      The ONS time spent on green tasks from <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/timespentongreentasks', class: 'link', target: '_blank', rel: 'noopener' %> - these are based off experimental estimates of the time spent doing green tasks, using task-level data from the US's <%= link_to 'O*NET database', 'https://www.onetcenter.org/overview.html', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-  </ul>
+  
+     
+    <p class="mb-4">
+    To understand the green labour market from an industry perspective, we needed to first assign Standard Industrial Classification (SIC) codes to job adverts. SIC codes are the <%= link_to "Office of National Statistics’ (ONS)", 'https://www.ons.gov.uk/', class: 'link', target: '_blank', rel: 'noopener' %> classification framework for economic activities. They’re hierarchical and range from manufacturing and sustainability consulting to recruitment. The latest version – UK SIC 2007 – can be accessed via the ONS website <%= link_to "here", 'https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007', class: 'link', target: '_blank', rel: 'noopener' %>.
+    </p>
+    <p class="mb-4">
+    In addition to defining SIC codes, the ONS also regularly reports on SIC level statistics, from earnings and hours worked by industry, to industry turnover and employment size. Most relevantly, <%= link_to "the ONS recently released experimental estimates of the green labour market", 'https://www.ons.gov.uk/economy/environmentalaccounts/bulletins/experimentalestimatesofgreenjobsuk/2023', class: 'link', target: '_blank', rel: 'noopener' %>, including <%= link_to "greenhouse gas (GHG) emission intensity by SIC code", 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %> per year. The emission intensity (which is the level of emissions per unit of economic output) value for 2021 is behind our <span class="bg-purple-300 py-0.5 px-1 rounded">industry greenness measure</span>.
+    </p>
+    <p class="mb-4">
+    You can find out more about how we extracted SIC codes from job adverts in our <%= link_to "methodological blog", 'https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-1-industry-cf75997f2f78', class: 'link', target: '_blank', rel: 'noopener' %>.
+    </p>
 
   <h2 class="text-xl font-bold my-3">Occupations</h2>
-  <ul class="list-disc">
-    <li class="ml-5 mb-1">
-      The ONS's emissions per employee by industry, United Kingdom, 2021 <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/emissionsperemployeeuk2015to2021', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-    <li class="ml-5 mb-1">
-      We use the <%= link_to 'Standard Occupation Classification', 'https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc', class: 'link', target: '_blank', rel: 'noopener' %>, which is published by the ONS.
-    </li>
-    <li class="ml-5 mb-1">
-      The Greater London Authority have mapped the
-      <%= link_to 'O*NET green occupations codes', 'https://www.onetcenter.org/green/skills.html', class: 'link', target: '_blank', rel: 'noopener' %> to UK SOC. This data is available to download <%= link_to 'here', 'https://data.london.gov.uk/dataset/identifying-green-occupations-in-london?_gl=1%2a8t5yr7%2a_ga%2aNzIwMzA5OTAwLjE2ODE5NzgzODk.%2a_ga_PY4SWZN1RJ%2aMTY4MjQzNTQxNS4xLjAuMTY4MjQzNTQyMC41NS4wLjA.', class: 'link', target: '_blank', rel: 'noopener' %> and a description about its creation is <%= link_to 'here', 'https://www.london.gov.uk/business-and-economy-publications/identifying-green-occupations-london#useful-links', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-    <li class="ml-5 mb-1">
-      A dataset of the green time shares for each SOC code based off O*NET dataset. The data is available to download from the ONS website <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/estimatedtimespentongreentasksbyoccupationcode', class: 'link', target: '_blank', rel: 'noopener' %> with methodology <%= link_to 'here', 'https://www.ons.gov.uk/economy/environmentalaccounts/articles/developingamethodformeasuringtimespentongreentasks/march2022', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-    <li class="ml-5 mb-8">
-      The O*NET green topics per occupation dataset downloaded from <%= link_to 'here', 'https://www.onetonline.org/search/green_topics/', class: 'link', target: '_blank', rel: 'noopener' %>, the report describing this data can be found <%= link_to 'here', 'https://www.onetcenter.org/reports/Green_Topics.html', class: 'link', target: '_blank', rel: 'noopener' %>.
-    </li>
-  </ul>
+  
+    <p class="mb-4">
+    We assign each of our job adverts to a <%= link_to "Standard Occupational Classification (SOC) code", 'https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc', class: 'link', target: '_blank', rel: 'noopener' %>. SOC codes were designed by the ONS, with the most recent version updated in 2020. Each occupation has a 4-digit SOC or a more granular 6-digit extended SOC. In the Green Jobs Explorer, the data behind each occupation is the aggregation of all our job adverts for a particular 2020 Extended SOC.
+    </p>
+    <p class="mb-4">
+    The ONS also created <%= link_to "a dataset of time spent on green tasks per SOC", 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/estimatedtimespentongreentasksbyoccupationcode', class: 'link', target: '_blank', rel: 'noopener' %>. This data is based on <%= link_to "research", 'https://www.onetcenter.org/dl_files/Green.pdf', class: 'link', target: '_blank', rel: 'noopener' %> done by the US’s Occupational Information Network (<%= link_to "O*NET", 'https://www.onetcenter.org/overview.html', class: 'link', target: '_blank', rel: 'noopener' %>) and gives estimates of the fraction of time spent doing green tasks per SOC 2010. More about their methodology can be found on the ONS website <%= link_to "here", 'https://www.ons.gov.uk/economy/environmentalaccounts/articles/developingamethodformeasuringtimespentongreentasks/march2022', class: 'link', target: '_blank', rel: 'noopener' %>. Thus by linking job adverts to SOC codes, we can find the fraction of <span class="bg-blue-300 py-0.5 px-1 rounded">time spent on green tasks per occupation</span>.
+    </p>
+    <p class="mb-4">
+    You can find out more about how we extracted SOC codes from job adverts in our <%= link_to "methodological blog", 'https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-2-occupation-99a1dc12bdef', class: 'link', target: '_blank', rel: 'noopener' %>.
+    </p>
+
+
 </section>
