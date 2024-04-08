@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_140150) do
     t.decimal "avg_num_skills"
     t.decimal "prop_green_skills"
     t.decimal "green_timeshare"
+    t.integer "green_topics_count"
     t.jsonb "green_topics_list", default: []
     t.jsonb "top_green_skills", default: []
     t.jsonb "top_not_green_skills", default: []
