@@ -1,0 +1,11 @@
+@import url('https://fonts.cdnfonts.com/s/18111/GOTHICB.woff');
+html,
+body,
+[class*="css"] {
+  /* Add the name of your font and local font path here*/
+  font-family: "Century Gothic";
+}
+.title-font {
+  font-style: normal;
+  font-weight: 700;
+}
