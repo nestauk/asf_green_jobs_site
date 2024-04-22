@@ -10,13 +10,24 @@
     We assign regions to each job advert using the <%= link_to "International Territorial Levels (ITL)", 'https://www.ons.gov.uk/methodology/geography/ukgeographies/eurostat#international-territorial-levels-itls-', class: 'link', target: '_blank', rel: 'noopener' %> standard classifications. Job adverts are assigned to one of 12 ITL 1 regions (the least granular), one of 37 ITL 2 regions and one of 159 ITL 3 regions (the most granular). When grouped by region, 100% of ITL 1 and 2 regions have over 1,000 job adverts, and 100% of ITL 3 regions have over 100 job adverts (92% have over 1,000 job adverts).
     </p>
 
+    <div class="w-full md:w-2/2 md:pr-6 my-4">
+      <div class="border border-brand-sand rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-4">A note on using online job adverts</h3>
+
+        <p class="mb-4">
+        We are aware online job adverts are biased in certain ways. They don't represent the full breadth of the labour market, and likely underestimate skills from primary industries such as agriculture, as well as the performing arts, where job adverts are not the main source of recruitment. In addition, they are used as tools for attracting candidates - so therefore might not reflect the nature of the occupations. For example, they might overly emphasise green aspects of the job or the greenness of the company hiring. We hope by aggregating our millions of job adverts by occupation we can minimise these effects. 
+        </p>
+        
+      </div>
+    </div>
+
   <h2 class="text-xl font-bold my-3">Green skills</h2>
     
     <p class="mb-4">
     Two sources helped us find green skills in job adverts. First, the European Commission’s European Classification of Occupations, Skills and Competences (ESCO) developed a skills taxonomy for the green transition, adding ‘green’ labels to <%= link_to "their full taxonomy of skills and knowledge concepts", 'https://esco.ec.europa.eu/en/about-esco/what-esco', class: 'link', target: '_blank', rel: 'noopener' %>. Their green skills list can be found on their website <%= link_to "here", 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>. Second, we also use the US’s Occupational Information Network’s (<%= link_to "O*NET", 'https://www.onetcenter.org/overview.html', class: 'link', target: '_blank', rel: 'noopener' %>) expertly curated list of <%= link_to "72 green topics", 'https://www.onetcenter.org/reports/Green_Topics.html', class: 'link', target: '_blank', rel: 'noopener' %>.
     </p>
     <p class="mb-4">
-    To calculate the <span class="bg-green-300 py-0.5 px-1 rounded">percentage of green skills</span> for each of our job adverts we identified what proportion of the skills were green based on the green ESCO taxonomy and the O*NET green topics. When reporting on the most common green and non-green skills we use ESCO taxonomy preferred skill names. You can find out more about this process by reading our <%= link_to "methodological blog", 'https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-3-skills-2015fa18b18f', class: 'link', target: '_blank', rel: 'noopener' %>.
+    To calculate the <span class="bg-green-300 py-0.5 px-1 rounded">percentage of skills that are green</span> for each of our job adverts we identified what proportion of the skills were green based on the green ESCO taxonomy and the O*NET green topics. When reporting on the most common green and non-green skills we use ESCO taxonomy preferred skill names. You can find out more about this process by reading our <%= link_to "methodological blog", 'https://medium.com/data-analytics-at-nesta/measuring-workforce-greenness-via-job-adverts-part-3-skills-2015fa18b18f', class: 'link', target: '_blank', rel: 'noopener' %>.
     </p>
 
     <div class="w-full md:w-2/2 md:pr-6 my-4">
