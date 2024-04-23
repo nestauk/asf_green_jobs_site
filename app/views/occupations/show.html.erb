@@ -21,11 +21,11 @@
 
     <div class="mb-3">
       <div class="flex gap-1 items-center w-full mb-1">
-        % of green skills
+        % of skills that are green
         <%= render partial: 'skills_rating',locals: { o: @occupation } %>
       </div>
       <p class="text-sm text-brand-gray">
-        This is based on the average proportion of green skills for this occupation. This is the % of skills out of all the skills associated with the occupation that are "green", meaning that they were found in the <%= link_to 'ESCO Green Skill list', 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>.
+      This is based on the average proportion of skills that are green in job adverts for this occupation. "Green" skills are defined as those found in the <%= link_to 'ESCO Green Skill list', 'https://esco.ec.europa.eu/en/about-esco/publications/publication/green-skills-and-knowledge-concepts-labelling-esco', class: 'link', target: '_blank', rel: 'noopener' %>.
       </p>
     </div>
 
@@ -35,7 +35,7 @@
         <%= render partial: 'industry_rating',locals: { o: @occupation } %>
       </div>
       <p class="text-sm text-brand-gray">
-        This rating is based on average per unit GHG emissions for industries this occupation sits in (using <%= link_to 'ONS 2022 data on atmospheric emissions', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %>).
+        This rating is based on average per unit GHG emissions for industries job adverts for this occupation sit in (using <%= link_to 'ONS 2022 data on atmospheric emissions', 'https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsatmosphericemissionsgreenhousegasemissionsintensitybyeconomicsectorunitedkingdom/current', class: 'link', target: '_blank', rel: 'noopener' %>).
       </p>
     </div>
 

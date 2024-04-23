@@ -3,25 +3,25 @@
     <h2 class="text-brand-blue text-xl font-bold mb-2"><%= link_to o.name, o %></h2>
 
     <p class="mb-2">
-      Based on <strong><%= number_with_delimiter(o.num_job_ads) %> job adverts</strong> for this occupation since 2001:
+      Based on <strong><%= number_with_delimiter(o.num_job_ads) %> job adverts</strong> for this occupation since 2021:
     </p>
 
     <ul class="list-disc">
       <li class="ml-5 mb-1">
-        <strong class="bg-green-300 py-0.5 px-1 rounded">Green skills made up <%= (o.prop_green_skills * 100).round(1) %>%</strong> of all skills mentioned, which is in the <%= third_to_words(o.green_skills_rating) %> third across occupations.
+        <strong class="bg-green-300 py-0.5 px-1 rounded">Green skills made up <%= (o.prop_green_skills * 100).round(1) %>%</strong> of all skills mentioned, which is in the <%= third_to_words(o.green_skills_rating) %> band across occupations.
       </li>
       <li class="ml-5 mb-2">
-        The average <strong class="bg-purple-300 py-0.5 px-1 rounded">CO<sub>2</sub> emissions of industries posting these ads was in the <%= third_to_words(o.green_industry_rating) %> third</strong>.
+        The industries posting these ads were in the <strong class="bg-purple-300 py-0.5 px-1 rounded"><%= third_to_words(o.green_industry_rating) %> band of industry greenness (based on CO<sub>2</sub> emissions).</strong>
       </li>
     </ul>
 
     <p class="mb-4">The median <strong>annual salary was <%= number_to_currency(o.median_min_annualised_salary, unit: "£", precision: 0) %> - <%= number_to_currency(o.median_max_annualised_salary, unit: "£", precision: 0) %></strong> from the ads that mentioned salary.</p>
 
-    <p class="mb-4">The ONS estimated that <strong class="bg-blue-300 py-0.5 px-1 rounded"><%= o.green_timeshare.round(1) %>% of hours were spent on green tasks</strong> in 2019 for workers in the broader parent group for this occupation, which is in the <%= third_to_words(o.green_occupation_rating) %> third.</p>
+    <p class="mb-4">The ONS estimated that <strong class="bg-blue-300 py-0.5 px-1 rounded"><%= o.green_timeshare.round(1) %>% of hours were spent on green tasks</strong> in 2019 for workers in the broader parent group for this occupation, which is in the <%= third_to_words(o.green_occupation_rating) %> band.</p>
 
     <div class="flex flex-wrap text-sm font-semibold">
      <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
-        % of green skills:
+        % skills that are green:
         <%= render partial: 'skills_rating',locals: { o: o } %>
       </div>
       <div class="flex gap-1 items-center w-full mb-1 md:w-1/3">
