@@ -54,6 +54,8 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  gem "dotenv-rails", "~> 2.8"
 end
 
 group :development do
@@ -78,3 +80,4 @@ end
 gem "chartkick", "~> 5.0"
 gem "kaminari", "~> 1.2"
 gem "ransack", "~> 4.1"
+gem "rollbar", "~> 3.5"
