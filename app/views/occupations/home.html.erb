@@ -7,12 +7,12 @@
       This tool harnesses job advert data to offer new insights into the green labour market. You can explore and compare the environmental aspects of different occupations to build a more nuanced picture of green jobs in the UK.
     </p>
 
-    <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-brand-blue hover:bg-blue-800 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+    <%= link_to occupations_path, class: 'inline-flex felx gap-2 mb-4 bg-brand-blue hover:bg-brand-aqua px-6 py-4 text-white font-bold text-lg no-underline' do %>
       <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M10.5857 10.5857L16.9496 7.0502L13.4141 13.4142L7.05012 16.9497L10.5857 10.5857Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       Explore green jobs
     <% end %>
 
-    <%= link_to compare_path, data: { turbo: false }, class: 'inline-flex felx gap-2 mb-4 bg-brand-purple hover:bg-purple-600 px-6 py-4 text-white font-bold text-lg no-underline' do %>
+    <%= link_to compare_path, data: { turbo: false }, class: 'inline-flex felx gap-2 mb-4 bg-brand-navy hover:bg-purple-600 px-6 py-4 text-white font-bold text-lg no-underline' do %>
       <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF"><path d="M9 21H15M9 21V16M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.6C3 16.2686 3.26863 16 3.6 16H9M15 21V9M15 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H15.6C15.2686 3 15 3.26863 15 3.6V9M15 9H9.6C9.26863 9 9 9.26863 9 9.6V16" stroke="#FFFFFF" stroke-width="1.5"></path></svg>
       Compare green jobs
     <% end %>
@@ -21,9 +21,9 @@
       <div class="flex flex-col">
         <div class="grow-0">
           <strong>Get data:</strong>
-            <%= link_to "By occupation", 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/occupation_aggregated_data_20240404_extra_gjeformat.csv', download: 'green_jobs_data_by_occupation.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
-      <%= link_to 'By industry', 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/industry_aggregated_data_20240404.csv', download: 'green_jobs_data_by_industry.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
-      <%= link_to 'By region', 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/GJE_itl_aggregated_data_20240404.csv', download: 'green_jobs_data_by_region.csv', class: 'text-white bg-lime-700 px-2 py-1 rounded no-underline hover:bg-lime-600' %>
+            <%= link_to "By occupation", 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/occupation_aggregated_data_20241121_GJE.xlsx', download: 'green_jobs_data_by_occupation.xlsx', class: 'text-white bg-brand-violet px-2 py-1 rounded no-underline hover:bg-brand-purple' %>
+      <%= link_to 'By industry', 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/industry_aggregated_data_20241121_GJE.xlsx', download: 'green_jobs_data_by_industry.xlsx', class: 'text-white bg-brand-violet px-2 py-1 rounded no-underline hover:bg-brand-purple' %>
+      <%= link_to 'By region', 'https://nesta-open-data.s3.eu-west-2.amazonaws.com/green_jobs_explorer/region_aggregated_data_20241121_GJE.xlsx', download: 'green_jobs_data_by_region.xlsx', class: 'text-white bg-brand-violet px-2 py-1 rounded no-underline hover:bg-brand-purple' %>
 
     </div>
       </div>
