@@ -1,6 +1,6 @@
 <% content_for :title, 'Compare green jobs' %>
 
-<section class="bg-brand-purple">
+<section class="bg-brand-navy">
   <div class="max-w-screen-lg mx-auto p-4 text-white">
     <h1 class="text-5xl font-bold my-6">
       Compare
@@ -11,59 +11,64 @@
   </div>
 </section>
 
+
 <section class="max-w-screen-lg mx-auto p-4 my-8">
   <h2 class="text-3xl font-bold mb-8">Measures at a glance</h2>
-
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
       <p class="mb-4">
         Most occupations engage minimally in green tasks, typically between 0%–1% of overall time spent within the role.
       </p>
       <p class="mb-4">
-        Occupations with a higher average proportion of green skills, exceeding the typical range of 0%–3%, are uncommon; for example, even adverts for environmental consultants ask for at most 22% green skills.
+        Occupations with a higher average proportion of green skills, exceeding the typical range of 0%–3%, are uncommon; for example, even adverts for environmental consultants ask for at most 21% green skills.
       </p>
       <p>
-        The majority of occupations are in industries that generate on average between 0.1–0.3 GHG emissions relative to economic output, but there are some occupations, such as airport managers (2.92) or importers and exporters (2.46), that have very high emission intensities.
+        The majority of occupations are in industries that generate on average between 0.1–0.3 GHG emissions relative to economic output, but there are some occupations, such as airport managers (2.3) or importers and exporters (2.48), that have very high emission intensities.
       </p>
     </div>
-    <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart1.html" frameborder="0" height="680px" width="100%" class="overflow-hidden"></iframe>
+    <div class="w-full md:w-8/12" style="height: 680px;">
+      <div class="flourish-embed flourish-scatter" data-src="visualisation/20528636?1802885" data-height="100%"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20528636/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+      <!-- <iframe src="/plots/chart1.html" frameborder="0" height="680px" width="100%" class="overflow-hidden"></iframe> -->
     </div>
   </div>
 
   <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
       <p class="mb-4">
-        Each point in this chart represents an occupation.
-      </p>
-      <p class="mb-4">
-        As the average GHG emissions increase for an occupation, there's no consistent increase in green skills or time spent on green tasks, indicated by varying colours mostly trending towards brown. High green skill occupations (as you move up the vertical axis) are rare and display varied emissions levels, but generally involve more green tasks, highlighted by greener colours. However, these occupations, such as energy managers and ecologists, are exceptions rather than the rule.
+        As the average GHG emissions increase for an occupation, there's no consistent increase in green skills or time spent on green tasks, indicated by varying colours mostly trending towards red. High green skill occupations (as you move up the vertical axis) are rare and display varied emissions levels, but generally involve more green tasks, highlighted by greener colours. However, these occupations, such as energy managers and ecologists, are exceptions rather than the rule.
       </p>
       <p>
         The graph suggests that there is not a straightforward relationship between an occupation's green skills and its environmental impact as measured by average GHG emissions per economic output.
       </p>
     </div>
     <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart2.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe>
+      <div class="flourish-embed flourish-scatter" data-src="visualisation/20581343?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20581343/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+      <!-- <iframe src="/plots/chart2.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe> -->
     </div>
   </div>
 
   <div class="flex flex-wrap overflow-hidden">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
       <p class="mb-4">
-        Each point in this chart represents an industry. The chart illustrates the nuanced link between industries' environmental initiatives and their GHG emissions.
+        The chart illustrates the nuanced link between industries' environmental initiatives and their GHG emissions.
       </p>
       <p class="mb-4">
-        Industries in the bottom left, with lower green skills and time spent on them, typically emit less GHG. Examples of these industries include social workers, barristers and bookkeepers. More time spent on green tasks (moving right) paradoxically correlates with higher emissions, as shown by the colour change from green to brown. This area of the chart is where many manufacturing industry occupations can be found.
+        Industries in the bottom left, with lower green skills and time spent on them, typically emit less GHG. Examples of these industries include social workers, barristers and bookkeepers. More time spent on green tasks (moving right) paradoxically correlates with higher emissions, as shown by the colour change from green to red. This area of the chart is where many manufacturing industry occupations can be found.
       </p>
       <p>
         There's no clear correlation between the level of green skills (vertical axis) and GHG emissions.
       </p>
     </div>
-    <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart3.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe>
+    <div class="w-full md:w-8/12 mb-10">
+      <!-- <iframe src="/plots/chart3.html" frameborder="0" height="540px" width="100%" class="overflow-hidden"></iframe> -->
+      <div class="flourish-embed flourish-scatter" data-src="visualisation/20580242?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20580242/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
     </div>
   </div>
+
+  <div class="mb-10">
+  <div class="flourish-embed flourish-chart" data-src="visualisation/20242655?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20242655/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+  </div>
+
 
 </section>
 
@@ -71,11 +76,13 @@
   <h2 class="text-3xl font-bold mb-8">The regional picture</h2>
 
   <div class="w-full mb-4 pr-0 md:pr-8">
-    The map reveals a varied picture across regions of the UK. For instance, the East Midlands is the region with the highest portion of time spent on green tasks but it scores highest for GHG emissions. A closer examination of individual areas within regions reveals significant local variations.
+    The map reveals a varied picture across regions of the UK. For instance, the East Midlands is the region with the highest portion of time spent on green tasks but it also scores one of the highest for GHG emissions. A closer examination of individual areas within regions reveals significant local variations.
   </div>
   <div class="w-full">
     <iframe src="/plots/chart4.html" frameborder="0" height="855px" width="100%" class="overflow-hidden"></iframe>
   </div>
+
+  <div class="flourish-embed flourish-chart" data-src="visualisation/20583877?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20583877/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
 
 
 </section>
@@ -83,32 +90,43 @@
 <section class="max-w-screen-lg mx-auto p-4 my-8">
   <h2 class="text-3xl font-bold mb-8">Digging deeper into skills</h2>
 
-  <p class="mb-4">The most requested green and non-green skills across our job adverts are given in the plots below.</p>
+  <p class="mb-4">The most requested green and non-green skills across all our job adverts, and across time, are given in the plots below.</p>
 
-  <div class="w-full mb-6">
-    <iframe src="/plots/chart5a.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
+
+  <div class="w-full mb-10">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/20531286?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20531286/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    <!-- <iframe src="/plots/chart5a.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe> -->
   </div>
 
-  <div class="w-full mb-6">
+  <div class="w-full mb-10">
+   <div class="flourish-embed flourish-chart" data-src="visualisation/20598616?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20598616/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+   </div>
+
+ <!--  <div class="w-full mb-6">
     <iframe src="/plots/chart5b.html" frameborder="0" height="500px" width="100%" class="overflow-hidden"></iframe>
-  </div>
+  </div> -->
 
-  <div class="flex flex-wrap overflow-hidden">
+  <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
-      <p>We can also compare occupations by how similar the skills they ask for are. In the following plot, you can select an occupation and see which occupations it is most similar to in terms of skills asked for.</p>
+      <p>We can also compare occupations by how similar the skills they ask for are. In the following plot, you can select an occupation and see which occupations it is most similar to in terms of skills asked for (horizontal axis). The verticle axis shows the average percentage of skills that are green for this occupation. </p>
     </div>
     <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart7.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+      <div class="flourish-embed flourish-scatter" data-src="visualisation/20577780?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20577780/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+      <!-- <iframe src="/plots/chart7.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe> -->
     </div>
   </div>
 
-  <div class="flex flex-wrap overflow-hidden">
+  <div class="flex flex-wrap overflow-hidden mb-10">
     <div class="w-full md:w-4/12 mb-4 pr-0 md:pr-8">
       <p>Not all skills in green occupations are considered green. Some of these skills will be transversal – for example, communication skills are found across the majority of job adverts regardless of how green the job is. However, some of these skills may be new green skills which weren’t given in the green skill list we searched through. To investigate these complementary skills, we looked at the skills that commonly co-occurred with green skills in the job adverts for green occupations. The plot below shows these.</p>
     </div>
     <div class="w-full md:w-8/12">
-      <iframe src="/plots/chart8.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/20531783?1802885"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20531783/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+      <!-- <iframe src="/plots/chart8.html" frameborder="0" height="480px" width="100%" class="overflow-hidden"></iframe> -->
     </div>
   </div>
 
+
+
 </section>
+
